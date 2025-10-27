@@ -58,3 +58,48 @@ a:hover {
     margin-bottom: 40px;
     letter-spacing: 0.5px;
 }
+
+/* Footer base styling */
+footer {
+    border-top: 1px solid #bfa98e;
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    color: #5a4f3f;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: -50px;
+}
+
+.footer-logo {
+    height: 100px;
+    width: auto;
+    opacity: 0.95;
+
+}
+
+.footer-logos img:first-child {
+    margin-right: -80px;
+}
+
+.footer-text {
+    text-align: left;
+    min-width: 260px;
+}
+
+.footer-text p {
+    margin: 3px 0;
+}
