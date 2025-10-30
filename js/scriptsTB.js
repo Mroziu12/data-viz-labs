@@ -139,8 +139,97 @@ function renderWaffles(years = [2022, 2023, 2024]) {
   });
 }
 
+function renderStacked100Bars(years = [1992,1995,2014, 2022, 2023, 2024]) {
+  const idxs = years.map(y => window.YEARS.indexOf(y));
+  const pick = (arr) => idxs.map(i => (i >= 0 ? Number(arr[i] ?? 0) : 0));
+
+  const euAbs   = pick(window.DATA.Europe);
+  const ukrAbs  = pick(window.DATA.Ukraine);
+  const rusAbs  = pick(window.DATA.Russia);
+  const othAbs  = euAbs.map((e, i) => Math.max(0, e - (ukrAbs[i] + rusAbs[i])));
+
+  // Normalize to 100%
+  const toPct = (nums, totals) =>
+    nums.map((v, i) => (totals[i] > 0 ? (v / totals[i]) * 100 : 0));
+
+  const ukrPct = toPct(ukrAbs, euAbs);
+  const rusPct = toPct(rusAbs, euAbs);
+  const othPct = toPct(othAbs, euAbs);
+
+  const ctx = document.getElementById("bar100-canvas");
+  if (!ctx || !window.Chart) return;
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: "Ukraine",
+          data: ukrPct,
+          backgroundColor: "#ffbf00",
+          stack: "share",
+          _abs: ukrAbs
+        },
+        {
+          label: "Russia",
+          data: rusPct,
+          backgroundColor: "#d62728",
+          stack: "share",
+          _abs: rusAbs
+        },
+        {
+          label: "Other",
+          data: othPct,
+          backgroundColor: "#9e9e9e",
+          stack: "share",
+          _abs: othAbs
+        }
+      ]
+    },
+    options: {
+      indexAxis: "y", // ✅ Horizontal orientation
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: "top" },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const ds = ctx.dataset;
+              const i = ctx.dataIndex;
+              const pct = ctx.raw ?? 0;
+              const abs = (ds._abs?.[i] ?? 0).toLocaleString();
+              return `${ds.label}: ${pct.toFixed(1)}% (${abs})`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          stacked: true,
+          min: 0,
+          max: 100,
+          ticks: {
+            stepSize: 10,
+            callback: v => v + "%"
+          },
+          title: { display: true, text: "Share of European conflict deaths" }
+        },
+        y: {
+          stacked: true,
+          title: { display: true, text: "Year" },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+}
+
+
 // ---- Bootstrap once DOM and data are ready ----
 document.addEventListener("DOMContentLoaded", () => {
   renderLineChart();
   renderWaffles([2022, 2023, 2024]);
+  renderStacked100Bars();
 });
