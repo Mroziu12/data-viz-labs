@@ -139,56 +139,63 @@ function renderWaffles(years = [2022, 2023, 2024]) {
   });
 }
 
-function renderStacked100Bars(years = [1992,1995,2014, 2022, 2023, 2024]) {
-  const idxs = years.map(y => window.YEARS.indexOf(y));
-  const pick = (arr) => idxs.map(i => (i >= 0 ? Number(arr[i] ?? 0) : 0));
+function renderContinentsStacked100(stepStart = 1990, step = 5) {
+  // pick years every 5 years (1990, 1995, ..., 2025)
+  const years = window.YEARS.filter(y => y >= stepStart && ((y - stepStart) % step === 0));
+  // ensure we include the last year if it’s not on the step
+  const last = window.YEARS[window.YEARS.length - 1];
+  if (!years.includes(last) && last > years[years.length - 1]) years.push(last);
 
-  const euAbs   = pick(window.DATA.Europe);
-  const ukrAbs  = pick(window.DATA.Ukraine);
-  const rusAbs  = pick(window.DATA.Russia);
-  const othAbs  = euAbs.map((e, i) => Math.max(0, e - (ukrAbs[i] + rusAbs[i])));
+  const idx = y => window.YEARS.indexOf(y);
+  const pick = name => years.map(y => {
+    const i = idx(y);
+    const arr = window.DATA[name] || [];
+    const v = (i >= 0 && i < arr.length) ? Number(arr[i] || 0) : 0;
+    return Number.isFinite(v) ? v : 0;
+  });
 
-  // Normalize to 100%
-  const toPct = (nums, totals) =>
-    nums.map((v, i) => (totals[i] > 0 ? (v / totals[i]) * 100 : 0));
+  const africa  = pick("Africa");
+  const amer    = pick("Americas");
+  const asiaOc  = pick("Asia_and_Oceania");
+  const europe  = pick("Europe");
 
-  const ukrPct = toPct(ukrAbs, euAbs);
-  const rusPct = toPct(rusAbs, euAbs);
-  const othPct = toPct(othAbs, euAbs);
+  const totals = years.map((_, i) => africa[i] + amer[i] + asiaOc[i] + europe[i]);
 
-  const ctx = document.getElementById("bar100-canvas");
+  const toPct = (arr) => arr.map((v, i) => totals[i] > 0 ? (v / totals[i]) * 100 : 0);
+
+  const dataPct = {
+    Africa:  toPct(africa),
+    Americas:toPct(amer),
+    AsiaOc:  toPct(asiaOc),
+    Europe:  toPct(europe),
+  };
+
+  const ctx = document.getElementById("continents-canvas");
   if (!ctx || !window.Chart) return;
 
-  new Chart(ctx, {
+  // Destroy previous instance if re-rendering
+  if (ctx._chart) { ctx._chart.destroy(); }
+
+  const COLORS = {
+    Africa:   "#9467bd",
+    Americas: "#8c564b",
+    AsiaOc:   "#2ca02c",
+    Europe:   "#1f77b4",
+  };
+
+  ctx._chart = new Chart(ctx, {
     type: "bar",
     data: {
       labels: years,
       datasets: [
-        {
-          label: "Ukraine",
-          data: ukrPct,
-          backgroundColor: "#ffbf00",
-          stack: "share",
-          _abs: ukrAbs
-        },
-        {
-          label: "Russia",
-          data: rusPct,
-          backgroundColor: "#d62728",
-          stack: "share",
-          _abs: rusAbs
-        },
-        {
-          label: "Other",
-          data: othPct,
-          backgroundColor: "#9e9e9e",
-          stack: "share",
-          _abs: othAbs
-        }
+        { label: "Africa",   data: dataPct.Africa,   backgroundColor: COLORS.Africa,   stack: "share", _abs: africa },
+        { label: "Americas", data: dataPct.Americas, backgroundColor: COLORS.Americas, stack: "share", _abs: amer },
+        { label: "Asia & Oceania", data: dataPct.AsiaOc, backgroundColor: COLORS.AsiaOc, stack: "share", _abs: asiaOc },
+        { label: "Europe",   data: dataPct.Europe,   backgroundColor: COLORS.Europe,   stack: "share", _abs: europe }
       ]
     },
     options: {
-      indexAxis: "y", // ✅ Horizontal orientation
+      indexAxis: "y",                 // horizontal bars
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
@@ -198,9 +205,9 @@ function renderStacked100Bars(years = [1992,1995,2014, 2022, 2023, 2024]) {
             label: (ctx) => {
               const ds = ctx.dataset;
               const i = ctx.dataIndex;
-              const pct = ctx.raw ?? 0;
+              const pct = (ctx.raw ?? 0).toFixed(1);
               const abs = (ds._abs?.[i] ?? 0).toLocaleString();
-              return `${ds.label}: ${pct.toFixed(1)}% (${abs})`;
+              return `${ds.label}: ${pct}% (${abs})`;
             }
           }
         }
@@ -208,17 +215,13 @@ function renderStacked100Bars(years = [1992,1995,2014, 2022, 2023, 2024]) {
       scales: {
         x: {
           stacked: true,
-          min: 0,
-          max: 100,
-          ticks: {
-            stepSize: 10,
-            callback: v => v + "%"
-          },
-          title: { display: true, text: "Share of European conflict deaths" }
+          min: 0, max: 100,
+          ticks: { stepSize: 10, callback: v => v + "%" },
+          title: { display: true, text: "Share of world conflict deaths" }
         },
         y: {
           stacked: true,
-          title: { display: true, text: "Year" },
+          title: { display: true, text: "Year (5-year step)" },
           grid: { display: false }
         }
       }
@@ -231,5 +234,5 @@ function renderStacked100Bars(years = [1992,1995,2014, 2022, 2023, 2024]) {
 document.addEventListener("DOMContentLoaded", () => {
   renderLineChart();
   renderWaffles([2022, 2023, 2024]);
-  renderStacked100Bars();
+  renderContinentsStacked100(1990,2);
 });
