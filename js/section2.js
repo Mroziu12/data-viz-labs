@@ -1,109 +1,147 @@
-// js/section2.js
 
-// Sample data
-const data = [
-    { region: 'Africa', value: 120 },
-    { region: 'Asia', value: 200 },
-    { region: 'Europe', value: 90 },
-    { region: 'Americas', value: 160 },
-    { region: 'Oceania', value: 40 }
+var margin = { top: 80, right: 25, bottom: 30, left: 60 },
+    width = 450 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+const monthsOrder = [
+    "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
 ];
 
-(function renderSection2() {
-    const container = d3.select('#chart-section2');
+// ---------- Function to create one heatmap ----------
+function createHeatmap(containerId, countryName, rows) {
+    const svg = d3.select(containerId)
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // Clear if rerendered
-    container.selectAll('*').remove();
+    let data = rows.filter(d => d.Country === countryName && monthsOrder.includes(d.MonthShort));
+    if (data.length === 0) {
+        d3.select(containerId).append("p").text("No data for: " + countryName);
+        return;
+    }
 
-    // Dimensions
-    const width = Math.min(720, container.node().clientWidth || 720);
-    const height = 360;
-    const margin = { top: 30, right: 20, bottom: 60, left: 60 };
+    const years = Array.from(new Set(data.map(d => d.Year))).sort((a, b) => a - b);
 
-    // SVG with viewBox for responsiveness
-    const svg = container
-        .append('svg')
-        .attr('viewBox', `0 0 ${width} ${height}`)
-        .attr('preserveAspectRatio', 'xMidYMid meet');
-
-    const innerWidth = width - margin.left - margin.right;
-    const innerHeight = height - margin.top - margin.bottom;
-
-    const g = svg.append('g')
-        .attr('transform', `translate(${margin.left},${margin.top})`);
+    const grid = [];
+    const map = d3.rollup(data, v => d3.sum(v, d => d.Births || 0), d => d.Year, d => d.MonthShort);
+    years.forEach(y => {
+        monthsOrder.forEach(m => {
+            grid.push({
+                year: y,
+                month: m,
+                value: (map.get(y) && map.get(y).get(m)) ?? null
+            });
+        });
+    });
 
     // Scales
-    const x = d3.scaleBand()
-        .domain(data.map(d => d.region))
-        .range([0, innerWidth])
-        .padding(0.2);
+    const x = d3.scaleBand().domain(monthsOrder).range([0, width]).padding(0.05);
+    const y = d3.scaleBand().domain(years).range([0, height]).padding(0.05); // ascending top→bottom
 
-    const y = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.value)]).nice()
-        .range([innerHeight, 0]);
+    // X axis
+    svg.append("g")
+        .style("font-size", 12)
+        .attr("transform", "translate(0,0)") // top position
+        .call(d3.axisTop(x).tickSize(0))
+        .select(".domain").remove();
 
-    // Axes
-    const xAxis = d3.axisBottom(x);
-    const yAxis = d3.axisLeft(y).ticks(5);
+    // Y axis
+    svg.append("g")
+        .style("font-size", 12)
+        .call(d3.axisLeft(y).tickSize(0))
+        .select(".domain").remove();
 
-    g.append('g')
-        .attr('class', 'axis x-axis')
-        .attr('transform', `translate(0,${innerHeight})`)
-        .call(xAxis)
-        .selectAll('text')
-        .attr('dy', '0.75em')
-        .attr('transform', 'rotate(0)') // easy to tweak later
-        .style('text-anchor', 'middle');
+    // Color scale
+    const maxVal = d3.max(grid, d => d.value ?? 0) || 1;
+    const color = d3.scaleSequential()
+        .interpolator(d3.interpolateYlGnBu)
+        .domain([0, maxVal]);
 
-    g.append('g')
-        .attr('class', 'axis y-axis')
-        .call(yAxis);
+    // Tooltip
+    const tooltip = d3.select(containerId)
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("border", "solid 1px #999")
+        .style("border-radius", "4px")
+        .style("padding", "6px 8px")
+        .style("pointer-events", "none");
 
-    // Bars (style via CSS: .chart .bar)
-    g.selectAll('.bar')
-        .data(data)
-        .enter()
-        .append('rect')
-        .attr('class', 'bar')        // styling comes from CSS
-        .attr('x', d => x(d.region))
-        .attr('y', d => y(d.value))
-        .attr('width', x.bandwidth())
-        .attr('height', d => innerHeight - y(d.value));
+    const mouseover = function (event, d) {
+        tooltip.style("opacity", 1);
+        d3.select(this).style("stroke", "black").style("opacity", 1);
+    };
+    const mousemove = function (event, d) {
+        tooltip.html(
+            `<strong>${countryName}</strong><br/>
+         Year: ${d.year}<br/>
+         Month: ${d.month}<br/>
+         Births: ${d.value ?? "n/a"}`
+        )
+            .style("left", (event.pageX + 12) + "px")
+            .style("top", (event.pageY - 28) + "px");
+    };
+    const mouseleave = function (event, d) {
+        tooltip.style("opacity", 0);
+        d3.select(this).style("stroke", "none").style("opacity", 0.9);
+    };
 
-    // Optional title inside SVG (styled via .chart .title)
-    g.append('text')
-        .attr('class', 'title')
-        .attr('x', innerWidth / 2)
-        .attr('y', -8)
-        .attr('text-anchor', 'middle')
-        .text('Events by Region (sample data)');
+    // Draw rectangles
+    svg.selectAll("rect.cell")
+        .data(grid, d => d.year + ":" + d.month)
+        .enter().append("rect")
+        .attr("class", "cell")
+        .attr("x", d => x(d.month))
+        .attr("y", d => y(d.year))
+        .attr("rx", 4).attr("ry", 4)
+        .attr("width", x.bandwidth())
+        .attr("height", y.bandwidth())
+        .style("fill", d => d.value == null ? "#eee" : color(d.value))
+        .style("stroke-width", 2)
+        .style("stroke", "none")
+        .style("opacity", 0.9)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave);
 
-    // Simple tooltip (CSS-positioned, not inline SVG style)
-    const tooltip = d3.select('body')
-        .append('div')
-        .attr('class', 'tooltip')
-        .style('opacity', 0);
+    // Title
+    svg.append("text")
+        .attr("x", 0).attr("y", -45)
+        .attr("text-anchor", "left")
+        .style("font-size", "20px")
+        .text(`Number of Births — ${countryName}`);
 
-    g.selectAll('.bar')
-        .on('mouseenter', (event, d) => {
-            tooltip
-                .style('opacity', 1)
-                .html(`<strong>${d.region}</strong><br/>${d.value} events`);
-        })
-        .on('mousemove', (event) => {
-            const [x, y] = d3.pointer(event);
-            tooltip
-                .style('left', (event.pageX + 10) + 'px')
-                .style('top', (event.pageY - 28) + 'px');
-        })
-        .on('mouseleave', () => {
-            tooltip.style('opacity', 0);
-        });
+    // Subtitle
+    svg.append("text")
+        .attr("x", 0).attr("y", -25)
+        .attr("text-anchor", "left")
+        .style("font-size", "12px")
+        .style("fill", "grey")
+        .text("Columns: Months, Rows: Years, Color: Births");
+}
 
-    // Rerender on resize (simple debounce)
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(renderSection2, 150);
-    }, { once: true }); // prevent infinite loop; reattach inside rerender
-})();
+// ---------- Load and preprocess Eurostat data ----------
+d3.csv("data/data2.csv", function rowParser(d) {
+    const monthFull = d["Month"];
+    const monthShort = monthFull ? monthFull.substring(0, 3).toUpperCase() : null;
+    const birthsRaw = d["OBS_VALUE"];
+    const births = (birthsRaw === ":" || birthsRaw === "<null>" || birthsRaw === "" || birthsRaw == null)
+        ? null : +birthsRaw;
+
+    return {
+        Country: d["Geopolitical entity (reporting)"],
+        Month: monthFull,
+        MonthShort: monthShort,
+        Year: +d["TIME_PERIOD"],
+        Births: births
+    };
+}).then(function (rows) {
+    createHeatmap("#heatmap-spain", "Spain", rows);
+    createHeatmap("#heatmap-greece", "Greece", rows);
+    createHeatmap("#heatmap-italy", "Italy", rows);
+});
