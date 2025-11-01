@@ -1,9 +1,8 @@
-// ---------- Chart parameters ----------
+
 var margin = { top: 80, right: 25, bottom: 30, left: 60 },
     width = 450 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom;
 
-// Short month names for compact display
 const monthsOrder = [
     "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
     "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
@@ -18,17 +17,14 @@ function createHeatmap(containerId, countryName, rows) {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // Filter for selected country
     let data = rows.filter(d => d.Country === countryName && monthsOrder.includes(d.MonthShort));
     if (data.length === 0) {
         d3.select(containerId).append("p").text("No data for: " + countryName);
         return;
     }
 
-    // Sorted years ascending (oldest on top)
     const years = Array.from(new Set(data.map(d => d.Year))).sort((a, b) => a - b);
 
-    // Pivot-like grid filling
     const grid = [];
     const map = d3.rollup(data, v => d3.sum(v, d => d.Births || 0), d => d.Year, d => d.MonthShort);
     years.forEach(y => {
@@ -45,7 +41,7 @@ function createHeatmap(containerId, countryName, rows) {
     const x = d3.scaleBand().domain(monthsOrder).range([0, width]).padding(0.05);
     const y = d3.scaleBand().domain(years).range([0, height]).padding(0.05); // ascending top→bottom
 
-    // X axis (on top)
+    // X axis
     svg.append("g")
         .style("font-size", 12)
         .attr("transform", "translate(0,0)") // top position
