@@ -126,7 +126,7 @@ function createHeatmap(containerId, countryName, rows) {
 }
 
 // ---------- Load and preprocess Eurostat data ----------
-d3.csv("data/data2.csv", function rowParser(d) {
+d3.csv("./data/data2.csv", function rowParser(d) {
     const monthFull = d["Month"];
     const monthShort = monthFull ? monthFull.substring(0, 3).toUpperCase() : null;
     const birthsRaw = d["OBS_VALUE"];
