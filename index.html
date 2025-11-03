@@ -44,9 +44,9 @@
     </section>
 
     <section id="section2">
-        <h2>Death and Live</h2>
+        <h2>How conflicts affect death rates and fertility</h2>
         <section id="sectionTB">
-            <h1 class="chart-title">Deaths over time</h1>
+            <h3 class="chart-title">Deaths over time</h3>
             <div id="line-wrap">
                 <canvas id="line-canvas"></canvas>
             </div>
@@ -95,7 +95,7 @@
                 </p>
             </div>
 
-            <h1 class="chart-title">Deaths in ongoing conflicts in Europe</h1>
+            <h3 class="chart-title">Deaths in ongoing conflicts in Europe</h3>
             <div id="waffles-container" class="waffles-container"></div>
 
             <p class="chart-caption">
@@ -105,7 +105,7 @@
                 conflict deaths still occurred in connection to this war.
             </p>
 
-            <h1 class="chart-title">Share of global conflict deaths by continent (100%)</h1>
+            <h3 class="chart-title">Share of global conflict deaths by continent (100%)</h3>
             <div id="continents-wrap"><canvas id="continents-canvas"></canvas></div>
 
             <p class="chart-caption">
@@ -124,12 +124,24 @@
             <script src="js/scriptsTB.js"></script>
         </section>
         <section id="sectionMAT">
-            <div id="heatmap-row" style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;">
+            <div id="fertility"></div>
+            <p class="chart-caption">
+                The fertility rate across Europe, Russia, and Ukraine has shown a clear long-term decline since 1950.
+                While families in
+                the mid-20th century typically had around three children, by the 1980s the average number had already
+                dropped below two.
+                <br>
+                In recent years, fertility has remained at historically low levels in all three regions. The situation
+                in Ukraine, where
+                birth rates have fallen even further, may also reflect the demographic impact of ongoing instability and
+                conflict
+            </p>
+            <div id="heatmap-row">
                 <div id="heatmap-spain"></div>
                 <div id="heatmap-greece"></div>
                 <div id="heatmap-italy"></div>
             </div>
-            <p>
+            <p class="chart-caption">
                 This chart was made to see if the number of births depends on the month. It turned out that there isn’t
                 a
                 clear pattern
@@ -157,6 +169,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="js/section2.js"></script>
+    <script src="js/sectionGB.js"></script>
 </body>
 
 </html>
