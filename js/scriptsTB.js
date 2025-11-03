@@ -221,7 +221,7 @@ function renderContinentsStacked100(stepStart = 1990, step = 5) {
         },
         y: {
           stacked: true,
-          title: { display: true, text: "Year (5-year step)" },
+          title: { display: true, text: "Year (2-year step)" },
           grid: { display: false }
         }
       }
@@ -229,10 +229,88 @@ function renderContinentsStacked100(stepStart = 1990, step = 5) {
   });
 }
 
+const CONT_COLORS = {
+  Africa:   "#9467bd",
+  Americas: "#8c564b",
+  AsiaOc:   "#2ca02c",   // Asia & Oceania
+  Europe:   "#1f77b4"
+};
+
+function getContinentValuesForYear(year) {
+  const idx = window.YEARS.indexOf(Number(year));
+  const pick = (arr) => (idx >= 0 && Array.isArray(arr)) ? Number(arr[idx] ?? 0) : 0;
+  return {
+    Africa:   pick(window.DATA.Africa),
+    Americas: pick(window.DATA.Americas),
+    AsiaOc:   pick(window.DATA.Asia_and_Oceania),
+    Europe:   pick(window.DATA.Europe)
+  };
+}
+
+function renderSimpleContinentBar(year = 2024) {
+  const ctx = document.getElementById("abs-canvas");
+  if (!ctx || !window.Chart) return;
+
+  const vals = getContinentValuesForYear(year);
+  const labels = ["Africa", "Americas", "Asia & Oceania", "Europe"];
+  const data   = [vals.Africa, vals.Americas, vals.AsiaOc, vals.Europe];
+  const colors = [CONT_COLORS.Africa, CONT_COLORS.Americas, CONT_COLORS.AsiaOc, CONT_COLORS.Europe];
+
+  if (ctx._chart) ctx._chart.destroy();
+
+  ctx._chart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        label: `Deaths in ${year}`,
+        data,
+        backgroundColor: colors,
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => `${c.formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",")} deaths`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: {
+          beginAtZero: true,
+          ticks: { callback: v => Number(v).toLocaleString() },
+          title: { display: true, text: "Deaths (absolute)" }
+        }
+      }
+    }
+  });
+}
+
+function initSimpleContinentBar(defaultYear = 2024) {
+  // initial render
+  renderSimpleContinentBar(defaultYear);
+
+  // year buttons
+  document.querySelectorAll(".abs-year-btn").forEach(btn => {
+    if (Number(btn.dataset.year) === Number(defaultYear)) btn.classList.add("active");
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".abs-year-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderSimpleContinentBar(Number(btn.dataset.year));
+    });
+  });
+}
 
 // ---- Bootstrap once DOM and data are ready ----
 document.addEventListener("DOMContentLoaded", () => {
   renderLineChart();
   renderWaffles([2022, 2023, 2024]);
   renderContinentsStacked100(1990,2);
+  initSimpleContinentBar(2025);
 });
