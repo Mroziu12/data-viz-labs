@@ -103,3 +103,11 @@ footer {
 .footer-text p {
     margin: 3px 0;
 }
+
+/* Charts */
+
+.chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
