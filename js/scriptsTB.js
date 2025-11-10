@@ -247,6 +247,7 @@ function getContinentValuesForYear(year) {
   };
 }
 
+// ---- continent bar chart  ----
 function renderSimpleContinentBar(year = 2024) {
   const ctx = document.getElementById("abs-canvas");
   if (!ctx || !window.Chart) return;
@@ -306,6 +307,67 @@ function initSimpleContinentBar(defaultYear = 2024) {
     });
   });
 }
+// ---- continent bar chart end ----
+
+// ---- Africa histogram (average per 5-year periods) ----
+function renderAfricaHistogram(step = 5, startYear = 1990) {
+  const ctx = document.getElementById("africa-hist");
+  if (!ctx || !window.Chart) return;
+
+  // znajdź indeks startowy (np. 1990)
+  const startIdx = window.YEARS.indexOf(startYear);
+  if (startIdx < 0) return;
+
+  const groupedLabels = [];
+  const groupedValues = [];
+
+  for (let i = startIdx; i < window.YEARS.length; i += step) {
+    const start = window.YEARS[i];
+    const end = window.YEARS[Math.min(i + step - 1, window.YEARS.length - 1)];
+    const label = `${start}–${end}`;
+    const slice = window.DATA.Africa.slice(i, i + step);
+    const avg = slice.reduce((a, b) => a + b, 0) / slice.length;
+    groupedLabels.push(label);
+    groupedValues.push(avg);
+  }
+
+  if (ctx._chart) ctx._chart.destroy();
+
+  ctx._chart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: groupedLabels,
+      datasets: [{
+        label: "Average conflict deaths (per 5 years)",
+        data: groupedValues,
+        backgroundColor: "#9467bd",
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => `${Math.round(c.raw).toLocaleString()} deaths (avg)`
+          }
+        }
+      },
+      scales: {
+        x: { title: { display: true, text: "5-year period" } },
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: "Average deaths" },
+          ticks: { callback: v => v.toLocaleString() }
+        }
+      }
+    }
+  });
+}
+
+// ---- Africa histogram koniec ----
 
 // ---- Bootstrap once DOM and data are ready ----
 document.addEventListener("DOMContentLoaded", () => {
@@ -313,4 +375,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderWaffles([2022, 2023, 2024]);
   renderContinentsStacked100(1990,2);
   initSimpleContinentBar(2025);
+  renderAfricaHistogram(5,1990);
+
 });
