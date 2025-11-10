@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/section2.css">
     <link rel="stylesheet" href="css/tomstyles.css">
+    <link rel="stylesheet" href="css/section3.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -44,9 +45,9 @@
     </section>
 
     <section id="section2">
-        <h2>Death and Live</h2>
+        <h2>How conflicts affect death rates and fertility</h2>
         <section id="sectionTB">
-            <h1 class="chart-title">Deaths over time</h1>
+            <h3 class="chart-title">Deaths over time</h3>
             <div id="line-wrap">
                 <canvas id="line-canvas"></canvas>
             </div>
@@ -95,7 +96,7 @@
                 </p>
             </div>
 
-            <h1 class="chart-title">Deaths in ongoing conflicts in Europe</h1>
+            <h3 class="chart-title">Deaths in ongoing conflicts in Europe</h3>
             <div id="waffles-container" class="waffles-container"></div>
 
             <p class="chart-caption">
@@ -105,7 +106,7 @@
                 conflict deaths still occurred in connection to this war.
             </p>
 
-            <h1 class="chart-title">Share of global conflict deaths by continent (100%)</h1>
+            <h3 class="chart-title">Share of global conflict deaths by continent (100%)</h3>
             <div id="continents-wrap"><canvas id="continents-canvas"></canvas></div>
 
             <p class="chart-caption">
@@ -118,18 +119,48 @@
                 Onfortunately, the recent reawakening of conflict in Europe has once again drawn significant attention
                 to the region as nearly 60% of global conflict deaths in 2024 were concentrated there.
             </p>
+            <h3 class="chart-title">Conflict deaths by continent in recent years</h3>
+            <div class="bar-abs-ctl">
+                <button class="abs-year-btn" data-year="2021">2021</button>
+                <button class="abs-year-btn" data-year="2022">2022</button>
+                <button class="abs-year-btn" data-year="2023">2023</button>
+                <button class="abs-year-btn" data-year="2024">2024</button>
+                <button class="abs-year-btn" data-year="2025">2025</button>
+            </div>
+            <div id="abs-wrap"><canvas id="abs-canvas"></canvas></div>
+
+            <p class="chart-caption">
+                In 2022–2024, Europe recorded more conflict-related deaths than any other continent.
+
+                However, the most recent data for <strong>2025</strong> (covering only the first half of the year)
+                already shows a downward trend, suggesting that the situation may be improving, allowing us to look
+                with hope toward the future.
+            </p>
+
 
 
             <script src="js/hardcoded-data.js"></script>
             <script src="js/scriptsTB.js"></script>
         </section>
         <section id="sectionMAT">
-            <div id="heatmap-row" style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;">
+            <div id="fertility"></div>
+            <p class="chart-caption">
+                The fertility rate across Europe, Russia, and Ukraine has shown a clear long-term decline since 1950.
+                While families in
+                the mid-20th century typically had around three children, by the 1980s the average number had already
+                dropped below two.
+                <br>
+                In recent years, fertility has remained at historically low levels in all three regions. The situation
+                in Ukraine, where
+                birth rates have fallen even further, may also reflect the demographic impact of ongoing instability and
+                conflict
+            </p>
+            <div id="heatmap-row">
                 <div id="heatmap-spain"></div>
                 <div id="heatmap-greece"></div>
                 <div id="heatmap-italy"></div>
             </div>
-            <p>
+            <p class="chart-caption">
                 This chart was made to see if the number of births depends on the month. It turned out that there isn’t
                 a
                 clear pattern
@@ -141,6 +172,31 @@
             </p>
         </section>
     </section>
+
+    <section id="section3">
+        <h2>A Global Look at Fertility</h2>
+        <h3 class="chart-title">Fertility on different continents</h3>
+        <section id="sectionDIST">
+            <div id="fertility-boxplot"></div>
+            <p class="chart-caption">
+                So here we can see that family sizes seem to differ quite a lot between continents.
+                In Africa, women tend to have more children - maybe because of cultural traditions or different living
+                conditions.
+                In Europe or North America, families look smaller, which could be related to lifestyle or economic
+                factors.
+                Of course, these are just possibilities - we’d need to look deeper to understand what really drives
+                those differences.
+            </p>
+            <h3 class="chart-title">How does it look over time?</h3>
+            <div id="fertility-ridgeline"></div>
+            <p class="chart-caption">
+                We can see that fertility has decreased in all regions, but at different speeds.
+                Africa still has the highest fertility, while Europe and North America have stayed low for many years.
+                Asia and Latin America show a strong decline since the 1960s, reaching much lower levels today.
+            </p>
+        </section>
+    </section>
+
 
     <footer>
         <div class="footer-content">
@@ -155,8 +211,11 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="js/section2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script>
+    <script src="js/section2.js" defer></script>
+    <script src="js/sectionGB.js" defer></script>
+    <script src="js/section3BoxPlot.js" defer></script>
+    <script src="js/section3Ridge.js" defer></script>
 </body>
 
 </html>

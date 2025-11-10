@@ -1,0 +1,25 @@
+#fertility-boxplot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* optional: vertical centering if you want */
+    margin-top: 10px;
+    /* space from top if needed */
+}
+
+#section3 p {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#fertility-ridgeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* optional: vertical centering if you want */
+    margin-top: 10px;
+    /* space from top if needed */
+    width: 100%;
+}
