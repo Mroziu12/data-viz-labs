@@ -1,0 +1,110 @@
+#line-wrap { max-width: 900px; height: 600px; margin: 0 auto; }
+
+/* layout for the set of waffles */
+.waffles-container {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  margin: 12px auto 6px;
+}
+
+/* each waffle block (title + grid + legend) */
+.waffle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* waffle grid (10x10) */
+.waffle-chart {
+  display: grid;
+  grid-template-columns: repeat(10, 20px);
+  grid-template-rows: repeat(10, 20px);
+  gap: 2px;
+  width: max-content;
+  margin: 8px auto;
+}
+
+/* each tile */
+.waffle-square {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* legend */
+.waffle-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 0.95em;
+  margin-top: 6px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-color { width: 14px; height: 14px; border-radius: 3px; }
+
+/* stack vertically on very narrow screens */
+@media (max-width: 700px) {
+  .waffles-container { flex-direction: column; gap: 22px; }
+}
+
+/* --- Chart section styles --- */
+.chart-title {
+  text-align: center;
+  margin-top: 28px;
+  font-weight: 700;
+}
+
+.chart-caption {
+  text-align: center;
+  max-width: 750px;
+  margin: 18px auto 30px;
+  font-style: italic;
+  color: #444;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* --- Chart description --- */
+.chart-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.chart-description h4 {
+  margin-top: 20px;
+  color: #2f3e29;
+}
+
+.chart-description ul {
+  margin: 10px 0 20px 25px;
+}
+
+.chart-description li {
+  margin-bottom: 10px;
+}
+
+.chart-description .note {
+  font-size: 0.9em;
+  color: #555;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+#bar100-wrap { max-width: 900px; height: 500px; margin: 0 auto; }
+
+#continents-wrap { max-width: 900px; height: 500px; margin: 0 auto 24px; }
+
+#abs-wrap { max-width: 900px; height: 420px; margin: 0 auto 22px; }
+.bar-abs-ctl { display: flex; gap: 8px; justify-content: center; margin: 8px 0 10px; }
+.abs-year-btn {
+  padding: 6px 10px; border: 1px solid rgba(0,0,0,.15); border-radius: 6px;
+  background: #fff; cursor: pointer;
+}
+.abs-year-btn.active { background: #f4f1ee; border-color: #bfa98e; }
+
+

@@ -1,0 +1,54 @@
+#section2 p {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Sekcja z wykresami */
+#sectionMAT {
+    padding: 20px 0;
+    /* opcjonalnie: padding itp. */
+}
+
+#sectionMAT .chart-caption {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* Kontener na wykres płodności (D3/Chart.js) */
+#fertility {
+    max-width: 900px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    /* wyśrodkowanie bloku */
+}
+
+/* Upewnij się, że SVG/canvas wypełnia kontener */
+#fertility svg,
+#fertility canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Rząd heatmap */
+#heatmap-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Responsywka */
+@media (max-width: 640px) {
+    #fertility {
+        height: 320px;
+    }
+
+    #heatmap-row {
+        gap: 20px;
+    }
+}

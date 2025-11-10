@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&family=Roboto+Slab:wght@500;700&display=swap');
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #f4f1ee;
+    color: #3b3024;
+    margin: 50px;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Slab', serif;
+    color: #4b6043;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px 0;
+
+}
+
+a {
+    color: #6b8e23;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4a7023;
+}
+
+#description {
+    border-left: 4px solid #6b8e23;
+    padding-left: 25px;
+}
+
+#title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+    color: #3a4a2b;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#groupDesc {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
+    font-style: italic;
+    text-align: center;
+    color: #5a4f3f;
+    margin-top: 0;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Footer base styling */
+footer {
+    border-top: 1px solid #bfa98e;
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    color: #5a4f3f;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: -50px;
+}
+
+.footer-logo {
+    height: 100px;
+    width: auto;
+    opacity: 0.95;
+
+}
+
+.footer-logos img:first-child {
+    margin-right: -80px;
+}
+
+.footer-text {
+    text-align: left;
+    min-width: 260px;
+}
+
+.footer-text p {
+    margin: 3px 0;
+}
+
+/* Charts */
+
+.chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
