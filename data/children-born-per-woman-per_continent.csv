@@ -1,0 +1,371 @@
+﻿Entity,Code,Year,Fertility
+Africa (UN),,1950,6.516
+Africa (UN),,1951,6.53
+Africa (UN),,1952,6.541
+Africa (UN),,1953,6.558
+Africa (UN),,1954,6.569
+Africa (UN),,1955,6.581
+Africa (UN),,1956,6.594
+Africa (UN),,1957,6.606
+Africa (UN),,1958,6.617
+Africa (UN),,1959,6.631
+Africa (UN),,1960,6.645
+Africa (UN),,1961,6.658
+Africa (UN),,1962,6.673
+Africa (UN),,1963,6.679
+Africa (UN),,1964,6.68
+Africa (UN),,1965,6.676
+Africa (UN),,1966,6.687
+Africa (UN),,1967,6.691
+Africa (UN),,1968,6.691
+Africa (UN),,1969,6.687
+Africa (UN),,1970,6.688
+Africa (UN),,1971,6.692
+Africa (UN),,1972,6.693
+Africa (UN),,1973,6.689
+Africa (UN),,1974,6.688
+Africa (UN),,1975,6.686
+Africa (UN),,1976,6.676
+Africa (UN),,1977,6.663
+Africa (UN),,1978,6.647
+Africa (UN),,1979,6.62
+Africa (UN),,1980,6.589
+Africa (UN),,1981,6.548
+Africa (UN),,1982,6.509
+Africa (UN),,1983,6.46
+Africa (UN),,1984,6.394
+Africa (UN),,1985,6.322
+Africa (UN),,1986,6.244
+Africa (UN),,1987,6.169
+Africa (UN),,1988,6.092
+Africa (UN),,1989,6.004
+Africa (UN),,1990,5.909
+Africa (UN),,1991,5.827
+Africa (UN),,1992,5.747
+Africa (UN),,1993,5.663
+Africa (UN),,1994,5.589
+Africa (UN),,1995,5.508
+Africa (UN),,1996,5.429
+Africa (UN),,1997,5.353
+Africa (UN),,1998,5.296
+Africa (UN),,1999,5.248
+Africa (UN),,2000,5.203
+Africa (UN),,2001,5.16
+Africa (UN),,2002,5.115
+Africa (UN),,2003,5.082
+Africa (UN),,2004,5.059
+Africa (UN),,2005,5.04
+Africa (UN),,2006,5.013
+Africa (UN),,2007,4.985
+Africa (UN),,2008,4.968
+Africa (UN),,2009,4.927
+Africa (UN),,2010,4.891
+Africa (UN),,2011,4.842
+Africa (UN),,2012,4.796
+Africa (UN),,2013,4.74
+Africa (UN),,2014,4.686
+Africa (UN),,2015,4.625
+Africa (UN),,2016,4.545
+Africa (UN),,2017,4.482
+Africa (UN),,2018,4.391
+Africa (UN),,2019,4.312
+Africa (UN),,2020,4.242
+Africa (UN),,2021,4.179
+Africa (UN),,2022,4.125
+Africa (UN),,2023,4.072
+Asia (UN),,1950,5.694
+Asia (UN),,1951,5.609
+Asia (UN),,1952,5.926
+Asia (UN),,1953,5.757
+Asia (UN),,1954,5.863
+Asia (UN),,1955,5.85
+Asia (UN),,1956,5.691
+Asia (UN),,1957,5.913
+Asia (UN),,1958,5.646
+Asia (UN),,1959,5.274
+Asia (UN),,1960,5.183
+Asia (UN),,1961,4.951
+Asia (UN),,1962,5.789
+Asia (UN),,1963,6.313
+Asia (UN),,1964,5.994
+Asia (UN),,1965,5.948
+Asia (UN),,1966,5.774
+Asia (UN),,1967,5.595
+Asia (UN),,1968,5.815
+Asia (UN),,1969,5.654
+Asia (UN),,1970,5.591
+Asia (UN),,1971,5.352
+Asia (UN),,1972,5.164
+Asia (UN),,1973,4.978
+Asia (UN),,1974,4.716
+Asia (UN),,1975,4.43
+Asia (UN),,1976,4.263
+Asia (UN),,1977,4.058
+Asia (UN),,1978,3.966
+Asia (UN),,1979,3.945
+Asia (UN),,1980,3.908
+Asia (UN),,1981,3.871
+Asia (UN),,1982,3.88
+Asia (UN),,1983,3.671
+Asia (UN),,1984,3.642
+Asia (UN),,1985,3.591
+Asia (UN),,1986,3.58
+Asia (UN),,1987,3.543
+Asia (UN),,1988,3.412
+Asia (UN),,1989,3.36
+Asia (UN),,1990,3.314
+Asia (UN),,1991,3.048
+Asia (UN),,1992,2.936
+Asia (UN),,1993,2.86
+Asia (UN),,1994,2.802
+Asia (UN),,1995,2.748
+Asia (UN),,1996,2.693
+Asia (UN),,1997,2.649
+Asia (UN),,1998,2.607
+Asia (UN),,1999,2.575
+Asia (UN),,2000,2.584
+Asia (UN),,2001,2.532
+Asia (UN),,2002,2.49
+Asia (UN),,2003,2.451
+Asia (UN),,2004,2.428
+Asia (UN),,2005,2.397
+Asia (UN),,2006,2.381
+Asia (UN),,2007,2.367
+Asia (UN),,2008,2.361
+Asia (UN),,2009,2.353
+Asia (UN),,2010,2.323
+Asia (UN),,2011,2.303
+Asia (UN),,2012,2.331
+Asia (UN),,2013,2.281
+Asia (UN),,2014,2.265
+Asia (UN),,2015,2.227
+Asia (UN),,2016,2.241
+Asia (UN),,2017,2.206
+Asia (UN),,2018,2.118
+Asia (UN),,2019,2.075
+Asia (UN),,2020,1.973
+Asia (UN),,2021,1.927
+Asia (UN),,2022,1.896
+Asia (UN),,2023,1.881
+Europe (UN),,1950,2.7
+Europe (UN),,1951,2.66
+Europe (UN),,1952,2.645
+Europe (UN),,1953,2.622
+Europe (UN),,1954,2.626
+Europe (UN),,1955,2.624
+Europe (UN),,1956,2.61
+Europe (UN),,1957,2.614
+Europe (UN),,1958,2.597
+Europe (UN),,1959,2.603
+Europe (UN),,1960,2.592
+Europe (UN),,1961,2.57
+Europe (UN),,1962,2.519
+Europe (UN),,1963,2.517
+Europe (UN),,1964,2.493
+Europe (UN),,1965,2.436
+Europe (UN),,1966,2.42
+Europe (UN),,1967,2.417
+Europe (UN),,1968,2.372
+Europe (UN),,1969,2.326
+Europe (UN),,1970,2.283
+Europe (UN),,1971,2.272
+Europe (UN),,1972,2.213
+Europe (UN),,1973,2.139
+Europe (UN),,1974,2.128
+Europe (UN),,1975,2.069
+Europe (UN),,1976,2.034
+Europe (UN),,1977,1.994
+Europe (UN),,1978,1.962
+Europe (UN),,1979,1.942
+Europe (UN),,1980,1.928
+Europe (UN),,1981,1.89
+Europe (UN),,1982,1.886
+Europe (UN),,1983,1.884
+Europe (UN),,1984,1.857
+Europe (UN),,1985,1.834
+Europe (UN),,1986,1.852
+Europe (UN),,1987,1.844
+Europe (UN),,1988,1.82
+Europe (UN),,1989,1.76
+Europe (UN),,1990,1.722
+Europe (UN),,1991,1.656
+Europe (UN),,1992,1.587
+Europe (UN),,1993,1.516
+Europe (UN),,1994,1.486
+Europe (UN),,1995,1.452
+Europe (UN),,1996,1.44
+Europe (UN),,1997,1.426
+Europe (UN),,1998,1.415
+Europe (UN),,1999,1.397
+Europe (UN),,2000,1.41
+Europe (UN),,2001,1.401
+Europe (UN),,2002,1.418
+Europe (UN),,2003,1.443
+Europe (UN),,2004,1.465
+Europe (UN),,2005,1.462
+Europe (UN),,2006,1.49
+Europe (UN),,2007,1.535
+Europe (UN),,2008,1.593
+Europe (UN),,2009,1.601
+Europe (UN),,2010,1.606
+Europe (UN),,2011,1.587
+Europe (UN),,2012,1.612
+Europe (UN),,2013,1.592
+Europe (UN),,2014,1.608
+Europe (UN),,2015,1.605
+Europe (UN),,2016,1.611
+Europe (UN),,2017,1.557
+Europe (UN),,2018,1.522
+Europe (UN),,2019,1.486
+Europe (UN),,2020,1.465
+Europe (UN),,2021,1.473
+Europe (UN),,2022,1.41
+Europe (UN),,2023,1.395
+Latin America and the Caribbean (UN),,1950,5.792
+Latin America and the Caribbean (UN),,1951,5.795
+Latin America and the Caribbean (UN),,1952,5.799
+Latin America and the Caribbean (UN),,1953,5.807
+Latin America and the Caribbean (UN),,1954,5.818
+Latin America and the Caribbean (UN),,1955,5.828
+Latin America and the Caribbean (UN),,1956,5.843
+Latin America and the Caribbean (UN),,1957,5.853
+Latin America and the Caribbean (UN),,1958,5.858
+Latin America and the Caribbean (UN),,1959,5.866
+Latin America and the Caribbean (UN),,1960,5.866
+Latin America and the Caribbean (UN),,1961,5.856
+Latin America and the Caribbean (UN),,1962,5.846
+Latin America and the Caribbean (UN),,1963,5.821
+Latin America and the Caribbean (UN),,1964,5.763
+Latin America and the Caribbean (UN),,1965,5.681
+Latin America and the Caribbean (UN),,1966,5.58
+Latin America and the Caribbean (UN),,1967,5.472
+Latin America and the Caribbean (UN),,1968,5.364
+Latin America and the Caribbean (UN),,1969,5.267
+Latin America and the Caribbean (UN),,1970,5.17
+Latin America and the Caribbean (UN),,1971,5.074
+Latin America and the Caribbean (UN),,1972,4.97
+Latin America and the Caribbean (UN),,1973,4.867
+Latin America and the Caribbean (UN),,1974,4.75
+Latin America and the Caribbean (UN),,1975,4.644
+Latin America and the Caribbean (UN),,1976,4.547
+Latin America and the Caribbean (UN),,1977,4.452
+Latin America and the Caribbean (UN),,1978,4.353
+Latin America and the Caribbean (UN),,1979,4.249
+Latin America and the Caribbean (UN),,1980,4.145
+Latin America and the Caribbean (UN),,1981,4.05
+Latin America and the Caribbean (UN),,1982,3.96
+Latin America and the Caribbean (UN),,1983,3.864
+Latin America and the Caribbean (UN),,1984,3.765
+Latin America and the Caribbean (UN),,1985,3.67
+Latin America and the Caribbean (UN),,1986,3.582
+Latin America and the Caribbean (UN),,1987,3.483
+Latin America and the Caribbean (UN),,1988,3.394
+Latin America and the Caribbean (UN),,1989,3.317
+Latin America and the Caribbean (UN),,1990,3.242
+Latin America and the Caribbean (UN),,1991,3.169
+Latin America and the Caribbean (UN),,1992,3.095
+Latin America and the Caribbean (UN),,1993,3.038
+Latin America and the Caribbean (UN),,1994,2.977
+Latin America and the Caribbean (UN),,1995,2.917
+Latin America and the Caribbean (UN),,1996,2.85
+Latin America and the Caribbean (UN),,1997,2.794
+Latin America and the Caribbean (UN),,1998,2.739
+Latin America and the Caribbean (UN),,1999,2.674
+Latin America and the Caribbean (UN),,2000,2.609
+Latin America and the Caribbean (UN),,2001,2.543
+Latin America and the Caribbean (UN),,2002,2.482
+Latin America and the Caribbean (UN),,2003,2.423
+Latin America and the Caribbean (UN),,2004,2.381
+Latin America and the Caribbean (UN),,2005,2.342
+Latin America and the Caribbean (UN),,2006,2.297
+Latin America and the Caribbean (UN),,2007,2.259
+Latin America and the Caribbean (UN),,2008,2.232
+Latin America and the Caribbean (UN),,2009,2.208
+Latin America and the Caribbean (UN),,2010,2.181
+Latin America and the Caribbean (UN),,2011,2.164
+Latin America and the Caribbean (UN),,2012,2.135
+Latin America and the Caribbean (UN),,2013,2.113
+Latin America and the Caribbean (UN),,2014,2.096
+Latin America and the Caribbean (UN),,2015,2.066
+Latin America and the Caribbean (UN),,2016,2.015
+Latin America and the Caribbean (UN),,2017,1.991
+Latin America and the Caribbean (UN),,2018,1.973
+Latin America and the Caribbean (UN),,2019,1.928
+Latin America and the Caribbean (UN),,2020,1.869
+Latin America and the Caribbean (UN),,2021,1.845
+Latin America and the Caribbean (UN),,2022,1.824
+Latin America and the Caribbean (UN),,2023,1.807
+Northern America (UN),,1950,3.105
+Northern America (UN),,1951,3.212
+Northern America (UN),,1952,3.31
+Northern America (UN),,1953,3.379
+Northern America (UN),,1954,3.496
+Northern America (UN),,1955,3.533
+Northern America (UN),,1956,3.635
+Northern America (UN),,1957,3.714
+Northern America (UN),,1958,3.758
+Northern America (UN),,1959,3.756
+Northern America (UN),,1960,3.74
+Northern America (UN),,1961,3.698
+Northern America (UN),,1962,3.547
+Northern America (UN),,1963,3.41
+Northern America (UN),,1964,3.274
+Northern America (UN),,1965,2.992
+Northern America (UN),,1966,2.768
+Northern America (UN),,1967,2.599
+Northern America (UN),,1968,2.499
+Northern America (UN),,1969,2.49
+Northern America (UN),,1970,2.491
+Northern America (UN),,1971,2.297
+Northern America (UN),,1972,2.045
+Northern America (UN),,1973,1.914
+Northern America (UN),,1974,1.866
+Northern America (UN),,1975,1.813
+Northern America (UN),,1976,1.782
+Northern America (UN),,1977,1.816
+Northern America (UN),,1978,1.792
+Northern America (UN),,1979,1.826
+Northern America (UN),,1980,1.84
+Northern America (UN),,1981,1.825
+Northern America (UN),,1982,1.831
+Northern America (UN),,1983,1.804
+Northern America (UN),,1984,1.804
+Northern America (UN),,1985,1.828
+Northern America (UN),,1986,1.825
+Northern America (UN),,1987,1.853
+Northern America (UN),,1988,1.907
+Northern America (UN),,1989,1.977
+Northern America (UN),,1990,2.034
+Northern America (UN),,1991,2.025
+Northern America (UN),,1992,2.008
+Northern America (UN),,1993,1.979
+Northern America (UN),,1994,1.959
+Northern America (UN),,1995,1.936
+Northern America (UN),,1996,1.928
+Northern America (UN),,1997,1.917
+Northern America (UN),,1998,1.938
+Northern America (UN),,1999,1.946
+Northern America (UN),,2000,1.979
+Northern America (UN),,2001,1.964
+Northern America (UN),,2002,1.955
+Northern America (UN),,2003,1.977
+Northern America (UN),,2004,1.984
+Northern America (UN),,2005,1.994
+Northern America (UN),,2006,2.041
+Northern America (UN),,2007,2.054
+Northern America (UN),,2008,2.018
+Northern America (UN),,2009,1.957
+Northern America (UN),,2010,1.89
+Northern America (UN),,2011,1.856
+Northern America (UN),,2012,1.84
+Northern America (UN),,2013,1.818
+Northern America (UN),,2014,1.826
+Northern America (UN),,2015,1.811
+Northern America (UN),,2016,1.784
+Northern America (UN),,2017,1.734
+Northern America (UN),,2018,1.695
+Northern America (UN),,2019,1.664
+Northern America (UN),,2020,1.596
+Northern America (UN),,2021,1.614
+Northern America (UN),,2022,1.636
+Northern America (UN),,2023,1.597

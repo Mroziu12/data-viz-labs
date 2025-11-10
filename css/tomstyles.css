@@ -1,4 +1,8 @@
-#line-wrap { max-width: 900px; height: 600px; margin: 0 auto; }
+#line-wrap {
+  max-width: 900px;
+  height: 600px;
+  margin: 0 auto;
+}
 
 /* layout for the set of waffles */
 .waffles-container {
@@ -6,7 +10,8 @@
   gap: 28px;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* allows wrapping on smaller screens */
   margin: 12px auto 6px;
 }
 
@@ -32,7 +37,7 @@
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* legend */
@@ -42,12 +47,25 @@
   font-size: 0.95em;
   margin-top: 6px;
 }
-.legend-item { display: flex; align-items: center; gap: 6px; }
-.legend-color { width: 14px; height: 14px; border-radius: 3px; }
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
 
 /* stack vertically on very narrow screens */
 @media (max-width: 700px) {
-  .waffles-container { flex-direction: column; gap: 22px; }
+  .waffles-container {
+    flex-direction: column;
+    gap: 22px;
+  }
 }
 
 /* --- Chart section styles --- */
@@ -95,16 +113,41 @@
   margin-top: 15px;
 }
 
-#bar100-wrap { max-width: 900px; height: 500px; margin: 0 auto; }
+#bar100-wrap {
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto;
+}
 
-#continents-wrap { max-width: 900px; height: 500px; margin: 0 auto 24px; }
+#continents-wrap {
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto 24px;
+}
 
-#abs-wrap { max-width: 900px; height: 420px; margin: 0 auto 22px; }
-.bar-abs-ctl { display: flex; gap: 8px; justify-content: center; margin: 8px 0 10px; }
+#abs-wrap {
+  max-width: 900px;
+  height: 420px;
+  margin: 0 auto 22px;
+}
+
+.bar-abs-ctl {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 8px 0 10px;
+}
+
 .abs-year-btn {
-  padding: 6px 10px; border: 1px solid rgba(0,0,0,.15); border-radius: 6px;
-  background: #fff; cursor: pointer;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
 }
 .abs-year-btn.active { background: #f4f1ee; border-color: #bfa98e; }
+
+#africa-hist-wrap { max-width: 900px; height: 520px; margin: 0 auto 22px; }
+
 
 
