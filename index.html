@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/section2.css">
     <link rel="stylesheet" href="css/tomstyles.css">
     <link rel="stylesheet" href="css/section3.css">
+    <link rel="stylesheet" href="css/section4.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -136,7 +137,7 @@
                 already shows a downward trend, suggesting that the situation may be improving, allowing us to look
                 with hope toward the future.
             </p>
-        
+
         </section>
         <section id="sectionMAT">
             <div id="fertility"></div>
@@ -171,8 +172,56 @@
 
     <section id="section3">
         <h2>A Global Look at Fertility and Deaths</h2>
-        <h3 class="chart-title">Fertility on different continents</h3>
         <section id="sectionDIST">
+            <h3 class="chart-title">Look on Africa deaths</h3>
+            <div id="africa-hist-wrap"><canvas id="africa-hist"></canvas></div>
+            <p class="chart-caption" style="text-align: justify;">
+                The chart shows how the number of conflict-related deaths in Africa has changed over time.
+                The early 1990s stand out with extremely high values, while in later decades we cannot observe a clear
+                trend.
+                Sadly, from <strong>2005–2009</strong> onward we can again see a rise in deaths.
+                We need to add that the final bar for <strong>2025</strong> reflects only the <em>first half of the
+                    year, </em>
+                suggesting tht if this horrible trend will continue, then in years <strong>2025-2029</strong> we will
+                observe even
+                more deaths in conflicts than in 2020-2024 period.
+            </p>
+
+            <div class="chart-description">
+                <h4>Major violent periods and their causes</h4>
+                <ul>
+                    <li>
+                        <strong>1990–1994:</strong> Extremely high death toll caused by several catastrophic conflicts,
+                        most notably the <em>Rwandan genocide (1994)</em>, the civil wars in <em>Liberia</em>,
+                        <em>Somalia</em>, and <em>Sudan</em>.
+                    </li>
+                    <li>
+                        <strong>2005–2009:</strong> Fightings in <em>Sudan</em>, the <em>Darfur conflict</em>,
+                        and instability in the <em>Democratic Republic of Congo</em>.
+                    </li>
+                    <li>
+                        <strong>2020–2024:</strong> Multiple concurrent crises:
+                        the <em>Tigray war in Ethiopia</em>, civil war in <em>Sudan</em>, and widespread
+                        conflicts across the <em>Sahel region</em> (countries localized near the southern border of
+                        sahara).
+                    </li>
+                </ul>
+            </div>
+            <h4 class="chart-title"> Conclusions on Europe-Africa comparison </h4>
+            <p>
+                In contrast to <strong>Europe</strong>, where decades of peace were interrupted only recently by the
+                <em>Russia–Ukraine war</em>, <strong> Africa's</strong> pattern show a disturbing view. A positive trend
+                of
+                declining
+                conflict deaths, visible up until the <strong>2005–2009</strong> period, has unfortunately reversed
+                since then.
+                From that point onward, the number of deaths has been <strong>consistently rising</strong>, reflecting
+                how fragile
+                peace remains across large parts of the continent and how new crises have emerged faster than old ones
+                could be
+                resolved.
+            </p>
+            <h3 class="chart-title">Fertility on different continents</h3>
             <div id="fertility-boxplot"></div>
             <p class="chart-caption">
                 So here we can see that family sizes seem to differ quite a lot between continents.
@@ -190,47 +239,27 @@
                 Africa still has the highest fertility, while Europe and North America have stayed low for many years.
                 Asia and Latin America show a strong decline since the 1960s, reaching much lower levels today.
             </p>
-            <h3 class="chart-title">Look on Africa deaths</h3>
-            <div id="africa-hist-wrap"><canvas id="africa-hist"></canvas></div>
-            <p class="chart-caption" style="text-align: justify;">
-                The chart shows how the number of conflict-related deaths in Africa has changed over time.
-                The early 1990s stand out with extremely high values, while in later decades we cannot observe a clear trend.
-                Sadly, from <strong>2005–2009</strong> onward we can again see a rise in deaths.
-                We need to add that the final bar for <strong>2025</strong> reflects only the <em>first half of the year, </em>
-                suggesting tht if this horrible trend will continue, then in years <strong>2025-2029</strong> we will observe even
-                more deaths in conflicts than in 2020-2024 period.
-            </p>
-            
-            <div class="chart-description">
-                <h4>Major violent periods and their causes</h4>
-                <ul>
-                    <li>
-                        <strong>1990–1994:</strong> Extremely high death toll caused by several catastrophic conflicts,
-                        most notably the <em>Rwandan genocide (1994)</em>, the civil wars in <em>Liberia</em>,
-                        <em>Somalia</em>, and <em>Sudan</em>.
-                    </li>
-                    <li>
-                        <strong>2005–2009:</strong> Fightings in <em>Sudan</em>, the <em>Darfur conflict</em>,
-                        and instability in the <em>Democratic Republic of Congo</em>.
-                    </li>
-                    <li>
-                        <strong>2020–2024:</strong> Multiple concurrent crises:
-                        the <em>Tigray war in Ethiopia</em>, civil war in <em>Sudan</em>, and widespread
-                        conflicts across the <em>Sahel region</em> (countries localized near the southern border of sahara).
-                    </li>
-                </ul>
-            </div>
-            <h4 class="chart-title"> Conclusions on Europe-Africa comparison </h4>
-            <p>
-                In contrast to <strong>Europe</strong>, where decades of peace were interrupted only recently by the
-                <em>Russia–Ukraine war</em>, <strong> Africa's</strong> pattern show a disturbing view. A positive trend of
-                declining
-                conflict deaths, visible up until the <strong>2005–2009</strong> period, has unfortunately reversed since then.
-                From that point onward, the number of deaths has been <strong>consistently rising</strong>, reflecting how fragile
-                peace remains across large parts of the continent and how new crises have emerged faster than old ones could be
-                resolved.
-            </p>
         </section>
+    </section>
+    <section id="section4">
+        <h2>Lets look how those fertility rates affect births</h2>
+        <h3 class="chart-title">Births over time with division by continent</h3>
+        <div id="births-stream-container">
+            <div id="births-stream"></div>
+        </div>
+        <p class="chart-caption">
+            Asia consistently contributes the largest share of global births throughout the entire period, peaking in
+            the late 1980s
+            and early 1990s. The most notable trend, however, is Africa’s steady and continuous rise—its annual number
+            of births has
+            roughly quadrupled, making it an increasingly significant contributor in recent decades. In contrast,
+            Europe, Latin
+            America, and Northern America show relatively stable or slightly declining birth numbers over time, and
+            their overall
+            share remains much smaller compared to Asia and Africa. These patterns will likely shape future demographic
+            trends and
+            influence the cultural composition of the global population.
+        </p>
     </section>
     <footer>
         <div class="footer-content">
@@ -250,6 +279,7 @@
     <script src="js/sectionGB.js" defer></script>
     <script src="js/section3BoxPlot.js" defer></script>
     <script src="js/section3Ridge.js" defer></script>
+    <script src="js/section4.js" defer></script>
     <script src="js/hardcoded-data.js" defer></script>
     <script src="js/scriptsTB.js" defer></script>
 </body>
