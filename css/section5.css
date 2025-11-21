@@ -1,0 +1,55 @@
+#map-container {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+}
+
+#map {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+}
+
+#year-slider {
+   -webkit-appearance: none;
+   appearance: none;
+   height: 8px;
+   outline: none;
+   border-radius: 4px;
+}
+
+#year-slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 20px;
+   height: 20px;
+   background: hsl(121, 47%, 24%);
+   cursor: pointer;
+   border-radius: 50%;
+}
+
+#year-slider::-moz-range-thumb {
+   width: 20px;
+   height: 20px;
+   background: #3a4a2b;
+   cursor: pointer;
+   border-radius: 50%;
+   border: none;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 1000;
+}
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #784242;
+        }
