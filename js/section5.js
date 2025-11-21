@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
       height: 500,
       targetYear: "1950",
       minYear: 1950,
-      maxYear: 2020
+      maxYear: 2023
    };
 
    // Data storage
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             colorScale = d3.scaleThreshold()
                .domain([2, 4, 6, 8, 10])
-               .range(d3.schemeGreens[5]);
+               .range(["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c"]);
 
             console.log("Loading data...");
 
@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const zoomHint = d3.select("#map")
          .select("div:last-child")
          .append("div")
-         .text("🖱️ Utilisez la molette pour zoomer • Cliquez-glissez pour déplacer")
          .style("position", "absolute")
          .style("bottom", "10px")
          .style("left", "10px")
@@ -164,22 +163,19 @@ document.addEventListener('DOMContentLoaded', function() {
       const sliderContainer = container
             .append("div")
             .style("text-align", "center")
-            .style("padding", "15px")
             .style("width", config.width + "px");
 
       // Titre du slider
       sliderContainer.append("div")
             .style("font-size", "16px")
             .style("font-weight", "bold")
-            .style("margin-bottom", "8px")
             .style("color", "#333")
 
       // Ajouter l'affichage de l'année
       sliderContainer.append("div")
             .attr("id", "year-display")
-            .style("font-size", "20px")
+            .style("font-size", "16px")
             .style("font-weight", "bold")
-            .style("margin-bottom", "10px")
             .style("color", "#3a4a2b;")
             .text(`Year: ${currentYear}`);
 
@@ -188,15 +184,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .style("display", "flex")
             .style("align-items", "center")
             .style("justify-content", "center")
-            .style("gap", "15px");
-
+         
       // Bouton précédent
       sliderControl.append("button")
             .text("◀")
             .style("padding", "5px 10px")
             .style("font-size", "16px")
             .style("cursor", "pointer")
-            .style("border", "1px solid #ccc")
+            .style("border", "0px solid #ccc")
             .style("background", "#fff")
             .style("border-radius", "4px")
             .on("click", function() {
@@ -231,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .style("padding", "5px 10px")
             .style("font-size", "16px")
             .style("cursor", "pointer")
-            .style("border", "1px solid #ccc")
+            .style("border", "0px solid #ccc")
             .style("background", "#fff")
             .style("border-radius", "4px")
             .on("click", function() {
@@ -239,15 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   currentYear++;
                   updateSlider();
                }
-            });
-
-      // Labels des années min/max
-      sliderContainer.append("div")
-            .style("display", "flex")
-            .style("justify-content", "space-between")
-            .style("margin-top", "5px")
-            .style("font-size", "12px")
-            .style("color", "#666")
+            });    
    }
 
    function updateSlider() {
@@ -319,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
          .append("path")
          .attr("d", path)
          .attr("fill", d => getCountryColor(d.properties.name, countryMappings))
-         .attr("stroke", "#ffffffff")
+         .attr("stroke", "#446143ff")
          .attr("stroke-width", 0.5)
          .on("mouseover", function(event, d) {
             // Changer le curseur quand on survole un pays
@@ -406,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .style("opacity", 0.9);
       tooltip.html(`
             <strong>${displayName}</strong><br/>
-            Value: ${value !== undefined ? value.toFixed(2) : 'Donnée manquante'}
+            Value: ${value !== undefined ? value.toFixed(2) : 'Missing value'}
       `)
             .style("left", (event.pageX + 10) + "px")
             .style("top", (event.pageY - 28) + "px");

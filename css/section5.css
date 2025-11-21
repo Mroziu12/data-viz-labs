@@ -2,15 +2,12 @@
     display: flex;
     justify-content: center;
     /* center horizontally */
-    margin-top: 30px;
 }
 
 #map {
     display: flex;
     justify-content: center;
     /* center horizontally */
-    margin-top: 30px;
-    border-radius: 5%;
 }
 
 #year-slider {
