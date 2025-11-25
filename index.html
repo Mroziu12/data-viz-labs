@@ -283,22 +283,28 @@
             Overall, the map highlights a global shift: while fertility is steadily decreasing worldwide, the pace of this transition varies sharply by region, shaping future demographic balances and the geographic distribution of population growth.
 
         </p>
-        <h2 class="chart-title">Conflict deaths by country (Dorling cartogram)</h2>
-<div id="cartogram-year-wrapper">
-
-    <div id="cartogram-year-label">2024</div>
-
-    <div class="cartogram-slider-row">
-        <span class="carto-min-year">1989</span>
-
-        <input type="range" id="cartogram-year" min="1989" max="2024" value="2024" step="1">
-
-        <span class="carto-max-year">2024</span>
-    </div>
-
-</div>
-
+        <h2 class="chart-title">Conflict deaths by country visualized on a map </h2>
+        <div id="cartogram-year-wrapper">
+            <div id="cartogram-year-label">2024</div>
+            <div class="cartogram-slider-row">
+                <span class="carto-min-year">1989</span>
+                <input type="range" id="cartogram-year" min="1989" max="2024" value="2024" step="1">
+                <span class="carto-max-year">2025</span>
+            </div>
+        </div>
         <div id="cartogram-container"></div>
+        <p class="chart-caption" >
+            This visualization uses a <strong>Dorling cartogram</strong>, a type of map where each country is represented by a circle,
+            with the circle size proportional to the number of conflict-related deaths in a given year. The geographic layout is presenting
+            only an approximation, so the visualization highlights more differences in magnitude rather than presents the accurate locations.
+            <br><br>
+            When exploring the cartogram across different years, we can observe a clear pattern: <strong>a few very large circles dominate</strong>
+            the global distribution, representing the countries responsible for the <strong>majority of all conflict deaths</strong> in a given year.
+            Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
+
+        </p>
+        </p>
+
     </div>
 
     <footer>

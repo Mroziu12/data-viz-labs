@@ -56,87 +56,8 @@
     color: #784242;
 }
 
-/* ------------------------------------------- */
-/*           D O R L I N G   C A R T O G R A M */
-/* ------------------------------------------- */
+/* CARTOGRAM  */
 
-/* Wrapper for slider + year label */
-#cartogram-year-wrapper {
-    width: 100%;
-    text-align: center;
-    margin: 25px 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Big centered current year */
-#cartogram-year-label {
-    font-size: 28px;
-    font-weight: bold;
-    color: #3a4a2b;
-    margin-bottom: 10px;
-}
-
-/* Row: [1989] [slider] [2025] */
-.cartogram-slider-row {
-    width: 650px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-}
-
-/* Min/max labels */
-.carto-min-year,
-.carto-max-year {
-    font-size: 18px;
-    font-weight: 600;
-    color: #4b6043;
-    width: 55px;
-    text-align: center;
-}
-
-/* Cartogram slider itself */
-#cartogram-year {
-   -webkit-appearance: none;
-   appearance: none;
-   width: 430px;
-   height: 8px;
-   background: #ddd;
-   border-radius: 4px;
-   outline: none;
-   cursor: pointer;
-}
-
-/* Thumb */
-#cartogram-year::-webkit-slider-thumb {
-   -webkit-appearance: none;
-   appearance: none;
-   width: 22px;
-   height: 22px;
-   background: hsl(121, 47%, 24%);
-   cursor: pointer;
-   border-radius: 50%;
-}
-
-#cartogram-year::-moz-range-thumb {
-   width: 22px;
-   height: 22px;
-   background: #3a4a2b;
-   cursor: pointer;
-   border-radius: 50%;
-   border: none;
-}
-
-/* Container for the cartogram SVG */
-#cartogram-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-/* Wrapper for slider + label */
 #cartogram-year-wrapper {
     width: 100%;
     text-align: center;
@@ -154,7 +75,7 @@
     margin-bottom: 12px;
 }
 
-/* Row: [1989] [slider] [2024] */
+/* Row:slider */
 .cartogram-slider-row {
     width: 520px;
     display: flex;
