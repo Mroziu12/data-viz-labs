@@ -277,9 +277,16 @@
             <div id="map"></div>
         </div>
         <p class="chart-caption">
-            The world map reveals striking regional contrasts in fertility patterns. Africa stands out with the highest fertility rates, particularly in Sub-Saharan regions, where many countries maintain averages well above replacement level. In contrast, much of Europe, East Asia, and North America exhibit consistently low fertility, often below two children per woman—levels that suggest long-term population aging and potential decline. Latin America and South Asia occupy an intermediate position, having experienced significant declines over recent decades but still showing moderately high rates in several countries. Overall, the map highlights a global shift: while fertility is steadily decreasing worldwide, the pace of this transition varies sharply by region, shaping future demographic balances and the geographic distribution of population growth.
+            The world map reveals striking regional contrasts in fertility patterns. Africa stands out with the highest fertility rates, particularly in Sub-Saharan regions, where many countries maintain averages well above replacement level. 
+            In contrast, much of Europe, East Asia, and North America exhibit consistently low fertility, often below two children per woman—levels that suggest long-term population aging and potential decline. 
+            Latin America and South Asia occupy an intermediate position, having experienced significant declines over recent decades but still showing moderately high rates in several countries. 
+            Overall, the map highlights a global shift: while fertility is steadily decreasing worldwide, the pace of this transition varies sharply by region, shaping future demographic balances and the geographic distribution of population growth.
 
         </p>
+        <h2 class="chart-title">Conflict deaths by country (Dorling cartogram)</h2>
+        <input type="range" id="cartogram-year" min="1989" max="2024" value="2024" step="1">
+        <span id="cartogram-year-label">2024</span>
+        <div id="cartogram-container"></div>
     </div>
 
     <footer>
@@ -304,7 +311,7 @@
     <script src="js/hardcoded-data.js" defer></script>
     <script src="js/scriptsTB.js" defer></script>
     <script src="js/section5.js" defer></script>
-    
+    <script src="js/worldCartogram.js" defer></script>
 
 </body>
 
