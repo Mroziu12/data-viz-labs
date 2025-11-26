@@ -1,0 +1,6 @@
+#births-stream-container {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    margin-top: 30px;
+}
