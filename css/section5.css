@@ -85,8 +85,8 @@
 }
 
 /* Min/max labels */
-.carto-min-year,
-.carto-max-year {
+.cartogram-min-year,
+.cartogram-max-year {
     font-size: 18px;
     font-weight: 600;
     color: #4b6043;
@@ -128,6 +128,84 @@
 
 /* Center cartogram container */
 #cartogram-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+/* worldArrow  */
+
+#worldArrow-year-wrapper {
+    width: 100%;
+    text-align: center;
+    margin: 25px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Big centered current year */
+#worldArrow-year-label {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3a4a2b;
+    margin-bottom: 12px;
+}
+
+/* Row:slider */
+.worldArrow-slider-row {
+    width: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Min/max labels */
+.worldArrow-min-year,
+.worldArrow-max-year {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4b6043;
+    width: 55px;
+    text-align: center;
+}
+
+/* Slider */
+#worldArrow-year {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 380px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Slider thumb */
+#worldArrow-year::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: hsl(121, 47%, 24%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#worldArrow-year::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: #3a4a2b;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Center cartogram container */
+#worldArrow-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
