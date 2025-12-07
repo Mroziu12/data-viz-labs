@@ -270,16 +270,84 @@
     </section>
 
     <div class="section5">
-        <h2>Let’s See How These Birth Rates Shape the World Map</h2>
+        <h2>Spatial Distribution of Fertility and Mortality Trends</h2>
         <div class="map-container">
-        <h3>Fertility Rate by Country (1950–2023)</h3>
+        <h3 class="chart-title">Fertility Rate by Country (1950–2023)</h3>
         <div class="year-title"></div>
             <div id="map"></div>
         </div>
         <p class="chart-caption">
-            The world map reveals striking regional contrasts in fertility patterns. Africa stands out with the highest fertility rates, particularly in Sub-Saharan regions, where many countries maintain averages well above replacement level. In contrast, much of Europe, East Asia, and North America exhibit consistently low fertility, often below two children per woman—levels that suggest long-term population aging and potential decline. Latin America and South Asia occupy an intermediate position, having experienced significant declines over recent decades but still showing moderately high rates in several countries. Overall, the map highlights a global shift: while fertility is steadily decreasing worldwide, the pace of this transition varies sharply by region, shaping future demographic balances and the geographic distribution of population growth.
+            The world map reveals striking regional contrasts in fertility patterns. Africa stands out with the highest fertility rates, particularly in Sub-Saharan regions, where many countries maintain averages well above replacement level. 
+            In contrast, much of Europe, East Asia, and North America exhibit consistently low fertility, often below two children per woman—levels that suggest long-term population aging and potential decline. 
+            Latin America and South Asia occupy an intermediate position, having experienced significant declines over recent decades but still showing moderately high rates in several countries. 
+            Overall, the map highlights a global shift: while fertility is steadily decreasing worldwide, the pace of this transition varies sharply by region, shaping future demographic balances and the geographic distribution of population growth.
 
         </p>
+        
+        <h3 class="chart-title">Conflict deaths by country visualized on a map </h2>
+        <div id="cartogram-year-wrapper">
+            <div id="cartogram-year-label">2024</div>
+            <div class="cartogram-slider-row">
+                <span class="carto-min-year">1989</span>
+                <input type="range" id="cartogram-year" min="1989" max="2024" value="2024" step="1">
+                <span class="carto-max-year">2025</span>
+            </div>
+        </div>
+        <div id="cartogram-container"></div>
+        <p class="chart-caption" >
+            This visualization uses a <strong>Dorling cartogram</strong>, a type of map where each country is represented by a circle,
+            with the circle size proportional to the number of conflict-related deaths in a given year. The geographic layout is presenting
+            only an approximation, so the visualization highlights more differences in magnitude rather than presents the accurate locations.
+            <br><br>
+            When exploring the cartogram across different years, we can observe a clear pattern: <strong>a few very large circles dominate</strong>
+            the global distribution, representing the countries responsible for the <strong>majority of all conflict deaths</strong> in a given year.
+            Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
+
+        </p>
+        </p>
+        <h3 class="chart-title">Fertility Rate by Country (1950–2023)</h3>
+
+        <div class="worldArrow-container">
+            <span class="year-label" id="worldArrow-year-label">2020</span>
+
+            <div class="slider-container">
+                <span class="worldArrow-min-year">1951</span>
+                <input type="range" id="worldArrow-year" class="year-slider" min="1950" max="2020" value="2020" step="1">
+                <span class="worldArrow-max-year">2023</span>
+            </div>
+               
+
+            <h3></h3>
+            <div class="year-title"></div>
+                <div id="map"></div>
+        </div>
+
+
+
+        <div id="worldArrow-container"></div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-arrow" id="legend-arrow-up"></div>
+                <span>Increase in Conflict Deaths</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-arrow" id="legend-arrow-down"></div>
+                <span>Decrease in Conflict Deaths</span>
+            </div>
+        </div>
+
+        <p class="chart-caption" >
+            This visualization uses a <strong>Dorling cartogram</strong>, a type of map where each country is represented by a circle,
+            with the circle size proportional to the number of conflict-related deaths in a given year. The geographic layout is presenting
+            only an approximation, so the visualization highlights more differences in magnitude rather than presents the accurate locations.
+            <br><br>
+            When exploring the cartogram across different years, we can observe a clear pattern: <strong>a few very large circles dominate</strong>
+            the global distribution, representing the countries responsible for the <strong>majority of all conflict deaths</strong> in a given year.
+            Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
+
+    </div>
+
     </div>
 
     <footer>
@@ -304,7 +372,8 @@
     <script src="js/hardcoded-data.js" defer></script>
     <script src="js/scriptsTB.js" defer></script>
     <script src="js/section5.js" defer></script>
-    
+    <script src="js/worldCartogram.js" defer></script>
+    <script src="js/worldArrowFert.js" defer></script>
 
 </body>
 
