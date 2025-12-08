@@ -1,0 +1,137 @@
+/* Styles pour le graphique réseau - Slider amélioré */
+.container-networkGraph {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px àpx;
+    padding: 20px;    
+    justify-content: center;
+}
+
+.controls-networkGraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    gap: 5px;
+}
+
+.year-display-networkGraph {
+    font-weight: bold;
+    color: #3a4a2b;
+}
+
+.slider-row-networkGraph {
+    width: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.min-year-networkGraph,
+.max-year-networkGraph {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4b6043;
+    width: 55px;
+    text-align: center;
+}
+
+.year-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 380px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.year-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: hsl(121, 47%, 24%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.year-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: #3a4a2b;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+#networkGraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+/* Tooltip pour le network graph */
+.tooltip-network {
+    position: absolute;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.tooltip-network strong {
+    color: #EED7C5;
+}
+
+/* Légende */
+.legend-network {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.legend-item-network {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-circle-network {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.legend-source-network {
+    background-color: #EED7C5;
+}
+
+.legend-continent-network {
+    background-color: #B36A5E;
+}
+
+.legend-link-network {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-line-network {
+    width: 40px;
+    height: 3px;
+    background-color: #CA7C5C;
+    border-radius: 2px;
+}

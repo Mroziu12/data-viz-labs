@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/section3.css">
     <link rel="stylesheet" href="css/section4.css">
     <link rel="stylesheet" href="css/section5.css">
+    <link rel="stylesheet" href="css/networkGraph.css">
     <script src="https://d3js.org/d3.v4.js"></script>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -306,15 +307,15 @@
         </p>
         </p>
         <h3 class="chart-title">Fertility Rate by Country (1950–2023)</h3>
-
-        <div class="worldArrow-container">
-            <span class="year-label" id="worldArrow-year-label">2020</span>
-
-            <div class="slider-container">
+        <div id="worldArrow-year-wrapper">
+            <div id="worldArrow-year-label">2023</div>
+            <div class="worldArrow-slider-row">
                 <span class="worldArrow-min-year">1951</span>
-                <input type="range" id="worldArrow-year" class="year-slider" min="1950" max="2020" value="2020" step="1">
+                <input type="range" id="worldArrow-year" min="1951" max="2023" value="2023" step="1">
                 <span class="worldArrow-max-year">2023</span>
             </div>
+        </div>
+        
                
 
             <h3></h3>
@@ -329,25 +330,52 @@
         <div class="legend">
             <div class="legend-item">
                 <div class="legend-arrow" id="legend-arrow-up"></div>
-                <span>Increase in Conflict Deaths</span>
+                <span>Increasing Birth Rates</span>
             </div>
             <div class="legend-item">
                 <div class="legend-arrow" id="legend-arrow-down"></div>
-                <span>Decrease in Conflict Deaths</span>
+                <span>Decreasing Birth Rates</span>
             </div>
         </div>
 
         <p class="chart-caption" >
-            This visualization uses a <strong>Dorling cartogram</strong>, a type of map where each country is represented by a circle,
-            with the circle size proportional to the number of conflict-related deaths in a given year. The geographic layout is presenting
-            only an approximation, so the visualization highlights more differences in magnitude rather than presents the accurate locations.
-            <br><br>
-            When exploring the cartogram across different years, we can observe a clear pattern: <strong>a few very large circles dominate</strong>
-            the global distribution, representing the countries responsible for the <strong>majority of all conflict deaths</strong> in a given year.
-            Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
-
+            The visualization effectively highlights how demographic transitions unfold unevenly across the globe, with certain regions undergoing more pronounced fertility fluctuations than others. This spatial representation allows for immediate identification of hotspots of demographic change and areas of reproductive stability, providing valuable insights into the evolving landscape of global population dynamics.
     </div>
 
+    
+
+    <div class="container-networkGraph">
+    <h1>Ukrainian Emigrants to Continents (1990-2025)</h1>
+        
+        <div class="controls-networkGraph">
+            <div class="year-display-networkGraph" id="yearDisplay-networkGraph">1990</div>
+            <div class="slider-row-networkGraph">
+                <span class="min-year-networkGraph">1990</span>
+                <input type="range" min="1990" max="2025" step="5" value="1990" 
+                    class="year-slider" id="yearSlider-networkGraph">
+                <span class="max-year-networkGraph">2025</span>
+            </div>
+        </div>
+        
+        <div id="networkGraph"></div>
+        
+        <div class="legend-network">
+            <div class="legend-item-network">
+                <div class="legend-circle-network legend-source-network"></div>
+                <span>Ukraine (Source)</span>
+            </div>
+            <div class="legend-item-network">
+                <div class="legend-circle-network legend-continent-network"></div>
+                <span>Continents of destination</span>
+            </div>
+            <div class="legend-link-network">
+                <div class="legend-line-network"></div>
+                <span>Emigration flows</span>
+            </div>
+        </div>
+        <p class="chart-caption" >
+        This visualization reveals Ukraine's shifting migration patterns from 1990 to 2025. Europe consistently dominates as the primary destination, with a stable Ukrainian population of 3-4 million until 2020. The most dramatic change occurs in 2025, when numbers surge to over 8.7 million – clear evidence of the mass displacement caused by Russia's 2022 invasion. Meanwhile, Asian destinations show a steady decline over the period, while North America demonstrates consistent growth, nearly doubling its Ukrainian population since 1990. Africa and Oceania maintain much smaller but stable communities. The graph effectively illustrates how geopolitical crises can rapidly transform decades-old migration patterns, turning gradual demographic trends into sudden humanitarian movements.
+        </p>
     </div>
 
     <footer>
@@ -374,7 +402,7 @@
     <script src="js/section5.js" defer></script>
     <script src="js/worldCartogram.js" defer></script>
     <script src="js/worldArrowFert.js" defer></script>
-
+    <script src="js/networkGraph.js" defer></script>
 </body>
 
 </html>
