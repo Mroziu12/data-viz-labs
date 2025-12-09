@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="css/section3.css">
     <link rel="stylesheet" href="css/section4.css">
     <link rel="stylesheet" href="css/section5.css">
-    <script src="https://d3js.org/d3.v4.js"></script>
-
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
@@ -347,7 +347,22 @@
             Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
 
     </div>
+    <section id="section6">
+        <h2>Where the Next Generation is Born</h2>
+        <h3 class="chart-title">Global Birth Distribution (2023)</h3>
+        
+        <div id="sankey-container" style="background: white; padding: 20px; border-radius: 8px;">
+            </div>
 
+        <p class="chart-caption">
+            This Sankey diagram visualizes the distribution of all babies born in 2023. 
+            The width of each flow represents the <strong>total number of births</strong>. 
+            <br><br>
+            While <strong>Africa</strong> has a much higher fertility rate (shown in the tooltip), 
+            <strong>Asia</strong> still dominates in total volume due to its massive existing population. 
+            Europe and the Americas continuously shrink in their share of the global "newborn" population.
+        </p>
+</section>
     </div>
 
     <footer>
@@ -374,7 +389,7 @@
     <script src="js/section5.js" defer></script>
     <script src="js/worldCartogram.js" defer></script>
     <script src="js/worldArrowFert.js" defer></script>
-
+    <script src="js/section6sankey.js" defer></script>
 </body>
 
 </html>
