@@ -12,14 +12,12 @@
     <link rel="stylesheet" href="css/section4.css">
     <link rel="stylesheet" href="css/section5.css">
     <link rel="stylesheet" href="css/networkGraph.css">
-    <script src="https://d3js.org/d3.v4.js"></script>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 
 <body>
@@ -30,26 +28,17 @@
         <h2>Project Overview</h2>
         <p>
             This webpage was created to show different types of data visualizations that help people understand both
-            current and
-            past conflicts around the world. By turning numbers into clear visuals, we want to make it easier to see
-            what is
-            really happening and how people are affected. These visualizations can highlight the terrible things that
-            happen in
-            many parts of the world and bring more attention to them in a simple and understandable way.
+            current and past conflicts around the world. By turning numbers into clear visuals, we want to make it easier to see
+            what is really happening and how people are affected. These visualizations can highlight the terrible things that
+            happen in many parts of the world and bring more attention to them in a simple and understandable way.
         </p>
-
 
         <p>
             The main data used in this project comes from the
-            <a href="https://acleddata.com/" target="_blank">ACLED (Armed Conflict Location &amp; Event Data
-                Project)</a>
+            <a href="https://acleddata.com/" target="_blank">ACLED (Armed Conflict Location &amp; Event Data Project)</a>
             and <a href="https://ourworldindata.org/" target="_blank">Our World in Data</a>.
-            ACLED provides information about political violence, protests, and conflicts — including where and when they
-            happen
-            and who is involved.
-            Our World in Data offers a wide range of global datasets, such as refugee numbers, humanitarian aid, and
-            human
-            development indicators.
+            ACLED provides information about political violence, protests, and conflicts — including where and when they happen and who is involved.
+            Our World in Data offers a wide range of global datasets, such as refugee numbers, humanitarian aid, and human development indicators.
         </p>
     </section>
 
@@ -99,9 +88,7 @@
 
                 <p class="note">
                     <em>Note:</em> Values reflect the dataset’s yearly best estimates for “deaths in ongoing conflicts.”
-                    Small year-to-year fluctuations outside the highlighted periods are possible but remain
-                    comparatively
-                    low.
+                    Small year-to-year fluctuations outside the highlighted periods are possible but remain comparatively low.
                 </p>
             </div>
 
@@ -119,9 +106,7 @@
             <div id="continents-wrap"><canvas id="continents-canvas"></canvas></div>
 
             <p class="chart-caption">
-                On this chart we can clearly see the mentioned before periods when major conflicts erupted in Europe —
-                the
-                early 1990s
+                On this chart we can clearly see the mentioned before periods when major conflicts erupted in Europe — the early 1990s
                 (Balkan wars) and after 2022 (Russia’s invasion of Ukraine). Between roughly 1995 and 2020,
                 Europe’s share of global conflict deaths remained minimal, illustrating a prolonged era
                 of peace on the continent while most violent conflicts occurred in Africa and Asia.
@@ -140,7 +125,6 @@
 
             <p class="chart-caption">
                 In 2022–2024, Europe recorded more conflict-related deaths than any other continent.
-
                 However, the most recent data for <strong>2025</strong> (covering only the first half of the year)
                 already shows a downward trend, suggesting that the situation may be improving, allowing us to look
                 with hope toward the future.
@@ -151,14 +135,11 @@
             <div id="fertility"></div>
             <p class="chart-caption">
                 The fertility rate across Europe, Russia, and Ukraine has shown a clear long-term decline since 1950.
-                While families in
-                the mid-20th century typically had around three children, by the 1980s the average number had already
+                While families in the mid-20th century typically had around three children, by the 1980s the average number had already
                 dropped below two.
                 <br>
                 In recent years, fertility has remained at historically low levels in all three regions. The situation
-                in Ukraine, where
-                birth rates have fallen even further, may also reflect the demographic impact of ongoing instability and
-                conflict
+                in Ukraine, where birth rates have fallen even further, may also reflect the demographic impact of ongoing instability and conflict.
             </p>
             <div id="heatmap-row">
                 <div id="heatmap-spain"></div>
@@ -166,13 +147,9 @@
                 <div id="heatmap-italy"></div>
             </div>
             <p class="chart-caption">
-                This chart was made to see if the number of births depends on the month. It turned out that there isn’t
-                a
-                clear pattern
+                This chart was made to see if the number of births depends on the month. It turned out that there isn’t a clear pattern
                 - births are spread quite evenly through the year. <br>
-
-                What we can see instead is that the total number of births keeps going down over time in all three
-                countries. The drop
+                What we can see instead is that the total number of births keeps going down over time in all three countries. The drop
                 is especially visible in Greece, where it likely got worse after the economic crisis.
             </p>
         </section>
@@ -185,13 +162,10 @@
             <div id="africa-hist-wrap"><canvas id="africa-hist"></canvas></div>
             <p class="chart-caption" style="text-align: justify;">
                 The chart shows how the number of conflict-related deaths in Africa has changed over time.
-                The early 1990s stand out with extremely high values, while in later decades we cannot observe a clear
-                trend.
+                The early 1990s stand out with extremely high values, while in later decades we cannot observe a clear trend.
                 Sadly, from <strong>2005–2009</strong> onward we can again see a rise in deaths.
-                We need to add that the final bar for <strong>2025</strong> reflects only the <em>first half of the
-                    year, </em>
-                suggesting tht if this horrible trend will continue, then in years <strong>2025-2029</strong> we will
-                observe even
+                We need to add that the final bar for <strong>2025</strong> reflects only the <em>first half of the year, </em>
+                suggesting tht if this horrible trend will continue, then in years <strong>2025-2029</strong> we will observe even
                 more deaths in conflicts than in 2020-2024 period.
             </p>
 
@@ -210,35 +184,25 @@
                     <li>
                         <strong>2020–2024:</strong> Multiple concurrent crises:
                         the <em>Tigray war in Ethiopia</em>, civil war in <em>Sudan</em>, and widespread
-                        conflicts across the <em>Sahel region</em> (countries localized near the southern border of
-                        sahara).
+                        conflicts across the <em>Sahel region</em> (countries localized near the southern border of sahara).
                     </li>
                 </ul>
             </div>
             <h4 class="chart-title"> Conclusions on Europe-Africa comparison </h4>
             <p>
                 In contrast to <strong>Europe</strong>, where decades of peace were interrupted only recently by the
-                <em>Russia–Ukraine war</em>, <strong> Africa's</strong> pattern show a disturbing view. A positive trend
-                of
-                declining
-                conflict deaths, visible up until the <strong>2005–2009</strong> period, has unfortunately reversed
-                since then.
-                From that point onward, the number of deaths has been <strong>consistently rising</strong>, reflecting
-                how fragile
-                peace remains across large parts of the continent and how new crises have emerged faster than old ones
-                could be
-                resolved.
+                <em>Russia–Ukraine war</em>, <strong> Africa's</strong> pattern show a disturbing view. A positive trend of declining
+                conflict deaths, visible up until the <strong>2005–2009</strong> period, has unfortunately reversed since then.
+                From that point onward, the number of deaths has been <strong>consistently rising</strong>, reflecting how fragile
+                peace remains across large parts of the continent and how new crises have emerged faster than old ones could be resolved.
             </p>
             <h3 class="chart-title">Fertility on different continents</h3>
             <div id="fertility-boxplot"></div>
             <p class="chart-caption">
                 So here we can see that family sizes seem to differ quite a lot between continents.
-                In Africa, women tend to have more children - maybe because of cultural traditions or different living
-                conditions.
-                In Europe or North America, families look smaller, which could be related to lifestyle or economic
-                factors.
-                Of course, these are just possibilities - we’d need to look deeper to understand what really drives
-                those differences.
+                In Africa, women tend to have more children - maybe because of cultural traditions or different living conditions.
+                In Europe or North America, families look smaller, which could be related to lifestyle or economic factors.
+                Of course, these are just possibilities - we’d need to look deeper to understand what really drives those differences.
             </p>
             <h3 class="chart-title">How does it look over time?</h3>
             <div id="fertility-ridgeline"></div>
@@ -256,16 +220,11 @@
             <div id="births-stream"></div>
         </div>
         <p class="chart-caption">
-            Asia consistently contributes the largest share of global births throughout the entire period, peaking in
-            the late 1980s
-            and early 1990s. The most notable trend, however, is Africa’s steady and continuous rise—its annual number
-            of births has
-            roughly quadrupled, making it an increasingly significant contributor in recent decades. In contrast,
-            Europe, Latin
-            America, and Northern America show relatively stable or slightly declining birth numbers over time, and
-            their overall
-            share remains much smaller compared to Asia and Africa. These patterns will likely shape future demographic
-            trends and
+            Asia consistently contributes the largest share of global births throughout the entire period, peaking in the late 1980s
+            and early 1990s. The most notable trend, however, is Africa’s steady and continuous rise—its annual number of births has
+            roughly quadrupled, making it an increasingly significant contributor in recent decades. In contrast, Europe, Latin
+            America, and Northern America show relatively stable or slightly declining birth numbers over time, and their overall
+            share remains much smaller compared to Asia and Africa. These patterns will likely shape future demographic trends and
             influence the cultural composition of the global population.
         </p>
     </section>
@@ -273,39 +232,37 @@
     <div class="section5">
         <h2>Spatial Distribution of Fertility and Mortality Trends</h2>
         <div class="map-container">
-        <h3 class="chart-title">Fertility Rate by Country (1950–2023)</h3>
-        <div class="year-title"></div>
+            <h3 class="chart-title">Fertility Rate by Country (1950–2023)</h3>
+            <div class="year-title"></div>
             <div id="map"></div>
         </div>
         <p class="chart-caption">
-            The world map reveals striking regional contrasts in fertility patterns. Africa stands out with the highest fertility rates, particularly in Sub-Saharan regions, where many countries maintain averages well above replacement level. 
-            In contrast, much of Europe, East Asia, and North America exhibit consistently low fertility, often below two children per woman—levels that suggest long-term population aging and potential decline. 
-            Latin America and South Asia occupy an intermediate position, having experienced significant declines over recent decades but still showing moderately high rates in several countries. 
+            The world map reveals striking regional contrasts in fertility patterns. Africa stands out with the highest fertility rates, particularly in Sub-Saharan regions, where many countries maintain averages well above replacement level.
+            In contrast, much of Europe, East Asia, and North America exhibit consistently low fertility, often below two children per woman—levels that suggest long-term population aging and potential decline.
+            Latin America and South Asia occupy an intermediate position, having experienced significant declines over recent decades but still showing moderately high rates in several countries.
             Overall, the map highlights a global shift: while fertility is steadily decreasing worldwide, the pace of this transition varies sharply by region, shaping future demographic balances and the geographic distribution of population growth.
-
         </p>
-        
+
         <h3 class="chart-title">Conflict deaths by country visualized on a map </h2>
-        <div id="cartogram-year-wrapper">
-            <div id="cartogram-year-label">2024</div>
-            <div class="cartogram-slider-row">
-                <span class="carto-min-year">1989</span>
-                <input type="range" id="cartogram-year" min="1989" max="2024" value="2024" step="1">
-                <span class="carto-max-year">2025</span>
+            <div id="cartogram-year-wrapper">
+                <div id="cartogram-year-label">2024</div>
+                <div class="cartogram-slider-row">
+                    <span class="carto-min-year">1989</span>
+                    <input type="range" id="cartogram-year" min="1989" max="2024" value="2024" step="1">
+                    <span class="carto-max-year">2025</span>
+                </div>
             </div>
-        </div>
-        <div id="cartogram-container"></div>
-        <p class="chart-caption" >
-            This visualization uses a <strong>Dorling cartogram</strong>, a type of map where each country is represented by a circle,
-            with the circle size proportional to the number of conflict-related deaths in a given year. The geographic layout is presenting
-            only an approximation, so the visualization highlights more differences in magnitude rather than presents the accurate locations.
-            <br><br>
-            When exploring the cartogram across different years, we can observe a clear pattern: <strong>a few very large circles dominate</strong>
-            the global distribution, representing the countries responsible for the <strong>majority of all conflict deaths</strong> in a given year.
-            Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
-
-        </p>
-        </p>
+            <div id="cartogram-container"></div>
+            <p class="chart-caption">
+                This visualization uses a <strong>Dorling cartogram</strong>, a type of map where each country is represented by a circle,
+                with the circle size proportional to the number of conflict-related deaths in a given year. The geographic layout is presenting
+                only an approximation, so the visualization highlights more differences in magnitude rather than presents the accurate locations.
+                <br><br>
+                When exploring the cartogram across different years, we can observe a clear pattern: <strong>a few very large circles dominate</strong>
+                the global distribution, representing the countries responsible for the <strong>majority of all conflict deaths</strong> in a given year.
+                Meanwhile,most countries do not display any circle at all — meaning that they recorded zero conflict-related deaths.
+            </p>
+        
         <h3 class="chart-title">Fertility Rate by Country (1950–2023)</h3>
         <div id="worldArrow-year-wrapper">
             <div id="worldArrow-year-label">2023</div>
@@ -315,15 +272,6 @@
                 <span class="worldArrow-max-year">2023</span>
             </div>
         </div>
-        
-               
-
-            <h3></h3>
-            <div class="year-title"></div>
-                <div id="map"></div>
-        </div>
-
-
 
         <div id="worldArrow-container"></div>
 
@@ -338,45 +286,57 @@
             </div>
         </div>
 
-        <p class="chart-caption" >
+        <p class="chart-caption">
             The visualization effectively highlights how demographic transitions unfold unevenly across the globe, with certain regions undergoing more pronounced fertility fluctuations than others. This spatial representation allows for immediate identification of hotspots of demographic change and areas of reproductive stability, providing valuable insights into the evolving landscape of global population dynamics.
     </div>
 
-    
-
-    <div class="container-networkGraph">
-    <h1>Ukrainian Emigrants to Continents (1990-2025)</h1>
+    <section id="section6">
+        <h2>Where the Next Generation is Born</h2>
         
-        <div class="controls-networkGraph">
-            <div class="year-display-networkGraph" id="yearDisplay-networkGraph">1990</div>
-            <div class="slider-row-networkGraph">
-                <span class="min-year-networkGraph">1990</span>
-                <input type="range" min="1990" max="2025" step="5" value="1990" 
-                    class="year-slider" id="yearSlider-networkGraph">
-                <span class="max-year-networkGraph">2025</span>
-            </div>
+        <h3 class="chart-title">Global Birth Distribution (2023)</h3>
+        <div id="sankey-container" style="background: white; padding: 20px; border-radius: 8px;">
         </div>
-        
-        <div id="networkGraph"></div>
-        
-        <div class="legend-network">
-            <div class="legend-item-network">
-                <div class="legend-circle-network legend-source-network"></div>
-                <span>Ukraine (Source)</span>
-            </div>
-            <div class="legend-item-network">
-                <div class="legend-circle-network legend-continent-network"></div>
-                <span>Continents of destination</span>
-            </div>
-            <div class="legend-link-network">
-                <div class="legend-line-network"></div>
-                <span>Emigration flows</span>
-            </div>
-        </div>
-        <p class="chart-caption" >
-        This visualization reveals Ukraine's shifting migration patterns from 1990 to 2025. Europe consistently dominates as the primary destination, with a stable Ukrainian population of 3-4 million until 2020. The most dramatic change occurs in 2025, when numbers surge to over 8.7 million – clear evidence of the mass displacement caused by Russia's 2022 invasion. Meanwhile, Asian destinations show a steady decline over the period, while North America demonstrates consistent growth, nearly doubling its Ukrainian population since 1990. Africa and Oceania maintain much smaller but stable communities. The graph effectively illustrates how geopolitical crises can rapidly transform decades-old migration patterns, turning gradual demographic trends into sudden humanitarian movements.
+        <p class="chart-caption">
+            This Sankey diagram visualizes the distribution of all babies born in 2023.
+            The width of each flow represents the <strong>total number of births</strong>.
+            <br><br>
+            While <strong>Africa</strong> has a much higher fertility rate (shown in the tooltip),
+            <strong>Asia</strong> still dominates in total volume due to its massive existing population.
+            Europe and the Americas continuously shrink in their share of the global "newborn" population.
         </p>
-    </div>
+
+        <div class="container-networkGraph">
+            <h1>Ukrainian Emigrants to Continents (1990-2025)</h1>
+            <div class="controls-networkGraph">
+                <div class="year-display-networkGraph" id="yearDisplay-networkGraph">1990</div>
+                <div class="slider-row-networkGraph">
+                    <span class="min-year-networkGraph">1990</span>
+                    <input type="range" min="1990" max="2025" step="5" value="1990" class="year-slider" id="yearSlider-networkGraph">
+                    <span class="max-year-networkGraph">2025</span>
+                </div>
+            </div>
+
+            <div id="networkGraph"></div>
+
+            <div class="legend-network">
+                <div class="legend-item-network">
+                    <div class="legend-circle-network legend-source-network"></div>
+                    <span>Ukraine (Source)</span>
+                </div>
+                <div class="legend-item-network">
+                    <div class="legend-circle-network legend-continent-network"></div>
+                    <span>Continents of destination</span>
+                </div>
+                <div class="legend-link-network">
+                    <div class="legend-line-network"></div>
+                    <span>Emigration flows</span>
+                </div>
+            </div>
+            <p class="chart-caption">
+                This visualization reveals Ukraine's shifting migration patterns from 1990 to 2025. Europe consistently dominates as the primary destination, with a stable Ukrainian population of 3-4 million until 2020. The most dramatic change occurs in 2025, when numbers surge to over 8.7 million – clear evidence of the mass displacement caused by Russia's 2022 invasion. Meanwhile, Asian destinations show a steady decline over the period, while North America demonstrates consistent growth, nearly doubling its Ukrainian population since 1990. Africa and Oceania maintain much smaller but stable communities. The graph effectively illustrates how geopolitical crises can rapidly transform decades-old migration patterns, turning gradual demographic trends into sudden humanitarian movements.
+            </p>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -402,7 +362,9 @@
     <script src="js/section5.js" defer></script>
     <script src="js/worldCartogram.js" defer></script>
     <script src="js/worldArrowFert.js" defer></script>
+    
     <script src="js/networkGraph.js" defer></script>
+    <script src="js/section6sankey.js" defer></script>
 </body>
 
 </html>
